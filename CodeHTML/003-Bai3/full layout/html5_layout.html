@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng layout</title>
+    <style type="text/css">
+        .page-wrap{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .page-wrap .header{
+            background: #FFFF00;
+            padding: 30px 0;
+        }
+        .page-wrap .navigation {
+            background: greenyellow;
+        }
+        .page-wrap .navigation ul {
+            overflow: hidden;
+            list-style: none;
+        }
+        .page-wrap .navigation ul li{
+            float: left;
+            padding: 10px;
+        }
+        .page-wrap .main {
+            overflow: hidden;
+        }
+        .page-wrap .sidebar-left {
+            float: left;
+            background: burlywood;
+            width: 20%;
+        }
+        .page-wrap .sidebar-right {
+            float: right;
+            background: burlywood;
+            width: 20%;
+        }
+        .page-wrap .content {
+            float: left;
+            background: orange;
+            margin-left: 50px;
+            width: 50%;
+        }
+        .page-wrap .footer {
+            background: aquamarine;
+            padding: 30px 40%;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <header class="header">
+        Nội dung của header
+    </header>  <!--end of header-->
+    <nav class="navigation">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Tin tức</a></li>
+        </ul>
+    </nav> <!--end of navigation-->
+    <main class="main">
+        <aside class="sidebar-left">
+            Nội dung sidebar bên trái
+        </aside>
+        <article class="content">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur min
+                us modi nihil reprehenderit saepe voluptatibus!
+                Accusantium debitis doloremque eveniet ex fuga, impedit inventore nem
+                o, neque, obcaecati porro similique totam voluptatem?
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur min
+                us modi nihil reprehenderit saepe voluptatibus!
+                Accusantium debitis doloremque eveniet ex fuga, impedit inventore nem
+                o, neque, obcaecati porro similique totam voluptatem?
+            </div>
+        </article><!--end of content-->
+        <aside class="sidebar-right">
+            Nội dung bên phải
+        </aside>
+    </main> <!--end of main-->
+    <footer class="footer">
+        Nội dung của footer
+    </footer><!--end of footer-->
+</div>
+</body>
+</html>
