@@ -21,16 +21,43 @@
             padding: 10px;
             background: orange;
         }
-        /*ul.main-menu  li a:hover {*/
+        ul.main-menu  li:hover>ul {
             /*background: green;*/
-        /*}*/
+            display: block;
+        }
         ul.main-menu li a {
             color: white;
             text-decoration: none;
         }
+        ul {
+            list-style: none;
+        }
+        ul.main-menu ul {
+            display: none;
+        }
+        ul.main-menu li {
+            position: relative;
+            background: orange  ;
+        }
+        ul.main-menu li>ul {
+            position: absolute;
+            left: -40px;
+            top: 39px;
+            width: 150px;
+        }
+        ul.main-menu ul li {
+            padding: 10px;
+        }
     </style>
 </head>
-<body>
+<body style="min-height: 1000px">
+    <h1>Khi muốn đặt vị trí của một khối html dựa vào vị trí của một khối html khác</h1>
+    <h1>Thì mình sử dụng position cho thẻ mẹ là relative và cho thẻ con là absolute</h1>
+    <h1>Sau đó mình đặt các thuộc tính top, left, right, bottom cho thẻ con dựa vào vị trí thẻ mẹ</h1>
+    <h2>Trong ví dụ phía dưới mình đặt thuộc thính position:relative cho thẻ li</h2>
+    <h2>Và đặt thuộc tính position:absolute cho thẻ ul nằm trực tiếp trong thẻ li đó</h2>
+    <h2>Và đặt thuộc tính top, left cho thẻ ul này</h2>
+
     <div class="container">
         <div class="row">
             <nav>
@@ -50,7 +77,13 @@
                             <li><a href="">Vụ án</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Thế giới</a></li>
+                    <li>
+                        <a href="">Thế giới</a>
+                        <ul>
+                            <li><a href="">Quân sự</a></li>
+                            <li><a href="">Tư liệu</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">Kinh doanh</a></li>
                     <li><a href="">Công nghệ</a></li>
                 </ul>
