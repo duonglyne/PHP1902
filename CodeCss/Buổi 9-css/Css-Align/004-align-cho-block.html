@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block-align</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        #img1, #img2, #img3 {
+            width: 250px;
+            height: 200px;
+            display: block;
+            margin: 50px auto;
+        }
+        #target1, #target2, #target3 {
+            color: white;
+            padding: 20px;
+            width: 300px;
+        }
+        #target1 {
+            background: green;
+            position: absolute;
+            top: 300px;
+            left: 0;
+        }
+        #target2 {
+            background: orange;
+            position: absolute;
+            top: 600px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        #target3 {
+            background: red;
+            position: absolute;
+            top: 900px;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Căn trái, phải, giữa theo chiều ngang sử dụng kỹ thuật position</h1>
+    <p>1 - Nếu thẻ block nằm trực tiếp trong thẻ body có position: absolute</p>
+    <p>2 - thẻ block phải có độ rộng xác định</p>
+    <p>3 - Căn trái đặt left: 0</p>
+    <p>4 - căn phải đặt right: 0</p>
+    <p>5 - căn giữa đặt left: 50% đồng thời sử dụng transform: translate(-50%, 0)</p>
+
+    <div id="target1">
+        <img id="img1" src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" />
+    </div>
+    <div id="target2">
+        <img id="img2" src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" />
+    </div>
+    <div id="target3">
+        <img id="img3" src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" />
+    </div>
+</body>
+</html>
