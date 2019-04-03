@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thẻ div lồng nhau</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        img {
+            width: 250px;
+            height: 200px;
+        }
+        #parent1 , #parent2, #parent3 {
+            background: green;
+            width: 800px;
+            margin: 30px;
+            font-size: 30px;
+            color: white;
+            position: relative;
+            height: 400px;
+        }
+        #child1, #child2, #child3 {
+            background: orange;
+            width: 50%;
+        }
+        #child1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #child2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #child3 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Căn trái, căn phải và căn giữa khi thẻ block nằm trong một thẻ block khác</h1>
+    <p>căn trái, phải, giữa theo thẻ mẹ</p>
+
+    <p>Khi căn vị trí theo thẻ mẹ sử dụng kĩ thuật position</p>
+    <p>1 - Cần đặt cho thẻ mẹ thuộc tính position: relative</p>
+    <p>2 - Cần đặt cho thẻ con thuộc tính position: absolute và đặt các giá trị thuôc tính css vị trí như
+    top, left, right, bottom theo nhu cầu thực tế</p>
+    <div id="parent1">
+        <div id="child1">
+            Căn trái
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>
+    <div id="parent2">
+        <div id="child2">
+            Căn giữa
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>\
+    <div id="parent3">
+        <div id="child3">
+            Căn phải
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>
+</body>
+</html>
