@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thẻ div lồng nhau</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        img {
+            width: 250px;
+            height: 200px;
+        }
+        #parent1 , #parent2, #parent3 {
+            background: green;
+            width: 800px;
+            margin: 30px auto;
+            font-size: 30px;
+            color: white;
+
+            height: 400px;
+        }
+        #child1, #child2, #child3 {
+            background: orange;
+            width: 50%;
+        }
+        .clearfix {
+            overflow: auto;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        #child1 {
+            float: left;
+        }
+        #child2 {
+            margin: auto;
+        }
+        #child3 {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Căn trái, căn phải và căn giữa theo chiều dọc khi thẻ block nằm trong một thẻ block khác</h1>
+    <p>căn trái, phải, giữa theo thẻ mẹ</p>
+
+    <p>Sử dụng kĩ thuật float và clear trong Css</p>
+    <p>Khi thẻ con float thì thẻ con sẽ trượt khỏi thẻ mẹ</p>
+    <div id="parent1" class="clearfix">
+        <div id="child1">
+            Căn trái
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>
+    <div id="parent2" class="clearfix">
+        <div id="child2">
+            Căn giữa
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>
+    <div id="parent3" class="clearfix">
+        <div id="child3">
+            Căn phải
+            <img src="https://vcdn-giaitri.vnecdn.net/2018/11/14/trieu-man8-1542185913_680x0.jpg" alt="mẫn mẫn">
+        </div>
+    </div>
+</body>
+</html>
