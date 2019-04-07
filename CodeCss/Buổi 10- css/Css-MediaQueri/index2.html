@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MQ Tiếp</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        .wrap {
+            overflow: auto;
+        }
+        .wrap .sidebar {
+            width: 20%;
+            float : left;
+        }
+        .wrap .main {
+            width: 80%;
+            float: right;
+            background-color: green;
+            color: white;
+        }
+        @media screen and (max-width: 600px) {
+            .wrap .sidebar {
+                width: 100%;
+                float: none;
+            }
+            .wrap .main {
+                width: 100%;
+                float : none;
+                background-color: #FFFF00;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <ul>
+            <li><a href="">Thế Giới</a></li>
+            <li><a href="">Thời Sự</a></li>
+            <li><a href="">Văn Hóa</a></li>
+            <li><a href="">Thể Thao</a></li>
+            <li><a href="">Tài Chính</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Đây là nội dung của trang</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid ex ipsa
+            iste itaque maxime minus mollitia necessitatibus nisi quae qui quisquam,
+            rerum, sequi sit unde? Animi molestiae necessitatibus veritatis.</p>
+    </div>
+</div>
+</body>
+</html>
