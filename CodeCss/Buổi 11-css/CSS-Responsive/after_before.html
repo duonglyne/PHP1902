@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuộc tính after và before</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            overflow: auto;
+        }
+        .row {
+            padding: 30px 0;
+            overflow: auto;
+            background-color: #CCCCCC;
+        }
+        .row::before {
+            content: "Before inner content";
+            background-color: red;
+            clear: both;
+            display: block;
+        }
+        .row::after {
+            content: "After inner content";
+            background-color: violet;
+            clear: both;
+            display: block;
+        }
+        .col-1 {
+            width: 33%;
+            background-color: green;
+            float: left;
+        }
+
+        .col {
+            min-height: 300px;
+            padding: 30px;
+        }
+        .col-2 {
+            width: 67%;
+            background-color: orange;
+            color: white;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-1">Column 1</div>
+            <div class="col col-2">Column 2</div>
+        </div>
+    </div>
+</body>
+</html>
