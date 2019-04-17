@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thông lưới của 1 web BS</title>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <style type="text/css">
+        .row1 {
+            background: #FF6347;
+            border: 2px solid red;
+        }
+        .intro {
+            background: green;
+            color: white;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>yêu cầu tạo ra một giao diện có 4 cột trên màn hình Desktop và có 2 cột trên máy tính
+            bảng và có 1 cột trên màn hình điện thoai</li>
+        <li>Lưới BS có 12 cột => giao diện có 4 cột : 12/4=3 (col-sm-3, col-md-3, col-3)</li>
+        <li>Lưới BS có 12 cột => giao diện có 3 cột : 12/3=4 (col-sm-4, col-md-4, col-4)</li>
+        <li>Lưới BS có 12 cột => giao diện có 2 cột : 12/2=6 (col-sm-6, col-md-6, col-6)</li>
+        <li>Lưới BS có 12 cột => giao diện có 1 cột : 12/1=12 (col-sm-12, col-md-12, col-12)</li>
+    </ol>
+
+
+    <ol>
+        <li>Giao diện mobile: class col-* (col-1, col-2,...., col-12)</li>
+        <li>Giao diện tablet : class col-sm-* (col-sm-1, col-sm-2,...., col-sm-12)</li>
+        <li>Giao diện laptop : class col-md-* (col-md-1, col-md-2,...., col-md-12)</li>
+        <li>Giao diện PC lớn : class col-lg-* (col-lg-1, col-lg-2,...., col-lg-12)</li>
+        <li>Giao diện siêu lớn : class col-xl-* (col-xl-1, col-xl-2,...., col-xl-12)</li>
+    </ol>
+
+
+    <div class="container">
+        <div class="row row1">
+            <div class="col-md-3 col-sm-6 col-12 intro">
+                <h1>Cột 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, in non!
+                    Aut consequuntur earum, esse exercitationem hic labore minima minus mollitia
+                    nam perspiciatis, possimus ratione sapiente sit soluta tempora! Voluptas?</p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 intro">
+                <h1>Cột 2</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, in non!
+                    Aut consequuntur earum, esse exercitationem hic labore minima minus mollitia
+                    nam perspiciatis, possimus ratione sapiente sit soluta tempora! Voluptas?</p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 intro">
+                <h1>Cột 3</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, in non!
+                    Aut consequuntur earum, esse exercitationem hic labore minima minus mollitia
+                    nam perspiciatis, possimus ratione sapiente sit soluta tempora! Voluptas?</p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 intro">
+                <h1>Cột 4</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, in non!
+                    Aut consequuntur earum, esse exercitationem hic labore minima minus mollitia
+                    nam perspiciatis, possimus ratione sapiente sit soluta tempora! Voluptas?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
