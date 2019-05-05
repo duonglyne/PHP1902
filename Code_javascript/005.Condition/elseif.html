@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lệnh else if</title>
+</head>
+<body>
+<h1> sử dụng else if</h1>
+<pre>
+    if(dk1) {
+        //Thực hiện câu lệnh khi thỏa mãn điều kiện 1 và kết thúc
+    }
+    else if(dk2) {
+        //Thực hiện câu lệnh khi thỏa mãn điều kiện 2 mà không thỏa mãn đk1 và kết thúc
+    }
+    else {
+        //thực hiện câu lệnh khi không thỏa mãn cả hai đk trên
+    }
+</pre>
+<script type="text/javascript">
+    var b = 5;
+    console.log("lệnh if đầu tiên:");
+    if (b < 5) {
+        console.log("bạn là học sinh yếu");
+    } else if (b < 6.5) {
+        console.log("bạn là học sinh trung bình");
+    } else if (b < 8) {
+        console.log("bạn là học sinh tiên tiến");
+    } else console.log("Bạn là học sinh giỏi");
+
+    console.log("lệnh if thứ 2:");
+
+    if (b >= 8) {
+        console.log("Bạn được học sinh giỏi")
+    } else if (b >= 6.5) {
+        console.log("bạn được học sinh tiên tiến");
+    } else if (b >= 5) {
+        console.log("bạn là học sinh trung bình");
+    } else console.log("bạn là học sinh yếu");
+
+    console.log("lệnh if thứ 3:");
+
+    if (b >= 8) {
+        console.log("Bạn được học sinh giỏi")
+    } else if ((b >= 6.5) && (b < 8)) {
+        console.log("bạn được học sinh tiên tiến");
+    } else if ((b >= 5) && (b <= 6.5)) {
+        console.log("bạn là học sinh trung bình");
+    } else console.log("bạn là học sinh yếu");
+</script>
+</body>
+</html>
