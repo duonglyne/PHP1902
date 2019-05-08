@@ -19,8 +19,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         // lấy kích thước màn hình khi mở ra
-        var w = $(this).width();
-        var h = $(this).height();
+        var w = $(window).width();
+        var h = $(window).height();
         $('p').html("chiều rông: "+w+" Chiều cao: "+h);
         $(window).resize(function(){
             // lấy kích thước màn hình khi thay đổi kích cỡ
