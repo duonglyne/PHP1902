@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Các sự kiện di chuột</h1>
+<h2>mouseenter: di chuột vào</h2>
+<h2>mouseleave: khi kéo chuột ra</h2>
+<div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipisicing el
+    it. Animi atque autem beatae consectetur deserunt eaque, eligendi inventore laud
+    antium libero, maiores, minus officia optio pariatur reiciendis repe
+    llat tempore ullam voluptate! Cumque.
+</div>
+<div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipisicing el
+    it. Animi atque autem beatae consectetur deserunt eaque, eligendi inventore laud
+    antium libero, maiores, minus officia optio pariatur reiciendis repe
+    llat tempore ullam voluptate! Cumque.
+</div>
+<div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipisicing el
+    it. Animi atque autem beatae consectetur deserunt eaque, eligendi inventore laud
+    antium libero, maiores, minus officia optio pariatur reiciendis repe
+    llat tempore ullam voluptate! Cumque.
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        // di chuột vào
+        // bên trong mouseenter là một callback
+        $('.container').mouseenter(function(){
+            // this là .container nhưng nó là đối tượng cụ thể mà nó đang chịu tác động vào
+            $(this).css("background","green");
+            $(this).css("padding","30px");
+            $(this).css("margin","30px");
+            $(this).css("color","orange");
+        })
+        // khi di chuột ra
+        $('.container').mouseleave(function(){
+            $(this).css("background","orange");
+            $(this).css("padding","30px");
+            $(this).css("margin","30px");
+            $(this).css("color","green");
+        })
+    })
+</script>
+</body>
+</html>
