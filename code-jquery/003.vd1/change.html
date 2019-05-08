@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Sự kiện change, thay đổi nội dung của thẻ input hay thẻ text area </h1>
+<form method="post" name="register" action="">
+    <input type="text" name="user" id="user">
+    <input  type="submit" name="submit" value="submit" id="submit">
+</form>
+<p></p>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("input#user").change(function(){
+           var text = $(this).val();
+
+          $('p').html(text);
+        })
+    })
+</script>
+</body>
+</html>
