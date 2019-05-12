@@ -13,7 +13,32 @@
     //thứ trong js: 0, 1, 2, 3, 4, 5, 6 tương tự các thứ trong tuần
     //tháng trong js: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
     var d=new Date();
-    console.log(d.getDay());
+    var x=d.getDay();
+    switch (x) {
+        case 0 :{
+            console.log("Chủ Nhật");
+            break;
+        } case 1 :{
+            console.log("thứ Hai");
+            break;
+        } case 2 :{
+            console.log("Thứ ba");
+            break;
+        } case 3 :{
+            console.log("Thứ tư");
+            break;
+        } case 4 :{
+            console.log("Thứ năm");
+            break;
+        } case 5 :{
+            console.log("thứ sáu");
+            break;
+        } case 6 :{
+            console.log("thứ bảy");
+            break;
+        }
+        default :console.log("hihi");
+    }
     console.log(d.getDate());
     console.log(d.getMonth());
     console.log(d.getFullYear());
