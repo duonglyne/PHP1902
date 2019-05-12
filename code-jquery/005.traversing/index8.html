@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Các phương thức filter tổng hợp</h1>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li class="home"><a href="">Trang Chủ</a></li>
+            <li class="news"><a href="">Tin tức</a></li>
+            <li class="intro"><a href="">Giới thiệu</a></li>
+            <li class="contact"><a href="">Liên hệ</a></li>
+        </ul>
+    </nav>
+</div>
+<div style="margin-top: 30px">
+    <button id="control">first()</button>
+    <button id="control1">last()</button>
+    <button id="control2">eq(2)</button>
+    <button id="control3">filter(.contact)</button>
+    <button id="control4">not(.contact)</button>
+    <button id="control22"style="color: white; background-color: red;
+    border:3px solid yellow; border-radius: 10px;padding:10px;">rì sét</button>
+
+</div>
+<pre style="padding: 20px">
+    Các phương thức filter tổng hợp
+    1, first(): lấy filter đầu tiên
+    2, last(): lấy filter cuối cùng
+    3, eq(chỉ số): lấy ra filter có chỉ số tương ứng
+    4, filter(bộ lọc): filter theo bộ lọc
+    4, not(bộ lọc): phủ định lại bộ lọc
+
+
+
+</pre>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#control22").on("click", function(){
+            $("ul").children().css("border", "none").css("padding", "0");
+        })
+        $("#control").on("click", function(){
+            $("li").first().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control1").on("click", function(){
+            $("li").last().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control2").on("click", function(){
+            $("li").eq(2).css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control3").on("click", function(){
+            $("li").filter(".contact").css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control4").on("click", function(){
+            $("li").not(".contact").css("border", "2px solid red").css("padding", "20px");
+        })
+
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

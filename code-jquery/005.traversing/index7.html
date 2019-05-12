@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Thao tác bằng jquery trên cây DOM</h1>
+<h2>Tìm anh chị em</h2>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li class="home"><a href="">Trang Chủ</a></li>
+            <li class="news"><a href="">Tin tức</a></li>
+            <li class="intro"><a href="">Giới thiệu</a></li>
+            <li class="contact"><a href="">Liên hệ</a></li>
+        </ul>
+    </nav>
+</div>
+<div style="margin-top: 30px">
+    <button id="control">sibling()</button>
+    <button id="control1">Siblings(filter)</button>
+    <button id="control2">next()</button>
+    <button id="control3">nextAll()</button>
+    <button id="control4">nextUntil(filter)</button>
+    <button id="control5">prev()</button>
+    <button id="control6">prevAll()</button>
+    <button id="control7">prevUntil(filter)</button>
+    <button id="control22"style="color: white; background-color: red;
+    border:3px solid yellow; border-radius: 10px;padding:10px;">rì sét</button>
+</div>
+<pre style="padding: 20px">
+    Các phương thức tìm kiếm các thẻ anh em
+    1, siblings() : trả về tất cả các thẻ anh chị em của selector được chọn
+    Siblings(filter) : trả về anh chị em dựa vào filter
+    2, next(): trả về thẻ tiếp theo của selector được chọn
+    3, nextAll(): Trả về tất cả các thẻ tiếp theo là anh chị em của selector được chọn
+    4, nextUntil(filter): trả về các thẻ anh chị em nằm giữa selector và filter
+    5, prev() : trả về thẻ anh em ở phía trước của selector
+    6, prevAll() : trả về tất cả các thẻ anh em ở phía trước của selector
+    7, prevUntil(filter): trả về tất cả các thẻ anh em nằm giữa selector và filter ở phía sau
+
+
+</pre>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#control22").on("click", function(){
+            $("ul").children().css("border", "none").css("padding", "0");
+        })
+        $("#control").on("click", function(){
+            $("li.home").siblings().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control1").on("click", function(){
+            $("li.home").siblings(".contact").css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control2").on("click", function(){
+            $("li.home").next().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control3").on("click", function(){
+            $("li.home").nextAll().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control4").on("click", function(){
+            $("li.home").nextUntil(".contact").css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control5").on("click", function(){
+            $("li.contact").prev().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control6").on("click", function(){
+            $("li.contact").prevAll().css("border", "2px solid red").css("padding", "20px");
+        })
+        $("#control7").on("click", function(){
+            $("li.contact").prevUntil(".news").css("border", "2px solid red").css("padding", "20px");
+        })
+    });
+</script>
+</body>
+</html>
+</body>
+</html>
