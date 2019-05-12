@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Thao tác bằng jquery trên cây DOM</h1>
+<h2>Tìm hậu duệ</h2>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li class="home"><a href="">Trang Chủ</a></li>
+            <li class="news"><a href="">Tin tức</a></li>
+            <li class="Intro"><a href="">Giới thiệu</a></li>
+            <li class="contact"><a href="">Liên hệ</a></li>
+        </ul>
+    </nav>
+</div>
+<div style="margin-top: 30px">
+    <button id="control">Tìm hậu duệ</button>
+</div>
+<pre style="padding: 20px">
+    Các phương thức tìm kiếm hậu duệ
+    Children("tham số"): phương thức trả về, các thẻ là con trực tiếp của selector
+    và có id || class || tagname... trùng với tham số.
+
+
+</pre>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#control").on("click", function(){
+            $("ul").children(".Intro").css("border", "2px solid red").css("padding", "20px");
+        })
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

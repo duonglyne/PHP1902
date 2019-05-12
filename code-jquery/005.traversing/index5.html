@@ -14,7 +14,7 @@
 <body>
 
 <h1>Thao tác bằng jquery trên cây DOM</h1>
-<h2>Parents("tham số") tìm tất cả các thẻ cha có selector bằng tham số</h2>
+<h2>Tìm hậu duệ</h2>
 
 <div class="container">
     <nav>
@@ -27,14 +27,12 @@
     </nav>
 </div>
 <div style="margin-top: 30px">
-    <button id="control">Tìm parents</button>
+    <button id="control">Tìm hậu duệ</button>
 </div>
 <pre style="padding: 20px">
-    Các phương thức tìm tổ tiên
-    parent(): tìm đến các thẻ ở cấp cao hơn như thẻ cha, thẻ ông .... cho đến thẻ html
-    khi truyền filter ( bộ lọc ) selector class, id, name...
-    thì parents(filter) tìm từ thẻ selector cho đến thẻ html nhưng mà
-    phải phù hợp với tham số filter mà mình đưa ra
+    Các phương thức tìm kiếm hậu duệ
+    Children(): phương thức này trả về tất cả các thẻ bên trong  là con trực tiếp của selector
+
 
 </pre>
 
@@ -48,7 +46,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#control").on("click", function(){
-            $("ul").parents(".container").css("border", "2px solid red").css("padding", "20px");
+            $("li").children().css("border", "2px solid red").css("padding", "20px");
         })
     });
 </script>
