@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js date</title>
+</head>
+<body>
+<h1>xử lý thời gian trong js</h1>
+<h2>Một số  phương thức dùng để set thời gian</h2>
+<p id="demo"></p>
+<script type="text/javascript">
+    // khởi tạo đói tượng thời gian từ một chuỗi xác định
+    //thứ trong js: 0, 1, 2, 3, 4, 5, 6 tương tự các thứ trong tuần
+    //tháng trong js: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+    var d=new Date();
+    d.setFullYear(2019);
+    d.setMonth(4);
+    d.setDate(12);
+    d.setHours(16);
+    d.setMinutes(33);
+    document.getElementById("demo").innerHTML= d;
+
+</script>
+</body>
+</html>
