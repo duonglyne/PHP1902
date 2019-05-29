@@ -14,7 +14,7 @@
         if ($i == 5){
             echo "<br> dừng vòng lặp tại đây !!";
             break;
-            // lệnh break sẽ dừng luôn vòng lặp tại nơi đặt lệnh 
+            // lệnh break sẽ dừng luôn vòng lặp tại nơi đặt lệnh
         }
 
         echo "<br> $i";
