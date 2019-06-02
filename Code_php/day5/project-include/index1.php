@@ -12,12 +12,15 @@
     - cách 2: include_once("fileName");
     - cách 3: require("fileName");
     - cách 4: require_once("fileName");
+    var_dump($bien) trả về kiểu dữ liệu và giá trị của biến,
+    hàm này dùng để debug
 
 </pre>
 <?php
 include ('function.php');
     $bk = 4;
-    echo "Chu vi hình tròn có bk = $bk là: ".cvHinhTron($bk);
+    echo "Chu vi hình tròn có bk = $bk là: ".cvHinhTron($bk)."<br>";
+    var_dump(cvHinhTron($bk));
 ?>
 
 </body>
