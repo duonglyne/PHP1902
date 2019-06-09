@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL</title>
+</head>
+<body>
+<pre>
+    COUNT(): hàm đếm tổng số bản ghi
+        - cú pháp: SELECT COUNT(column_name) FROM table_name WHERE condition
+        - ví dụ: SELECT COUNT(id) AS tong_khach_hang FROM `customers` -> tổng số id của khách hàng;
+
+
+    AVG(): tính giá trị trung bình
+        - cú pháp: SELECT AVG(column_name) FROM table_name WHERE condition
+        - ví dụ: SELECT AVG(list_price) FROM products tính trung bình giá của sản phẩm
+
+
+    SUM(): tính tổng
+        - cú pháp: SELECT SUM(column_name) FROM table_name WHERE condition
+        - ví dụ: SELECT SUM(list_price) FROM products tính tổng giá trị của các sản phẩm;
+</pre>
+</body>
+</html>
