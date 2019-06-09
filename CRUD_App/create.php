@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>CRUD App</title>
 </head>
@@ -10,7 +11,7 @@
 // nạp file kết nối CSDL
 include_once "config.php";
 $name = "";
-$adress = "";
+$address = "";
 $salary = "";
 
 /**
@@ -44,13 +45,13 @@ if (isset($_POST) && !empty($_POST)){
      */
     if (empty($errors)){
         $name = $_POST['name'];
-        $adress = $_POST['adress'];
+        $address = $_POST['address'];
         $salary = $_POST['salary'];
 
         $sqlInsert = "INSERT INTO employees (name, address, salary) VALUES ('$name', '$address', $salary)";
         // thực hiện câu lệnh SQL
 
-        $result = $sqlInsert;
+        $result = $connection->query($sqlInsert);
 
         if($result == true) {
             echo "<div class='alert alert-success'>Thêm mới nhân viên thành công ! <a href='index.php'>Trang chủ</a></div>";
@@ -79,7 +80,7 @@ if (isset($_POST) && !empty($_POST)){
                 </div>
                 <div class="form-group">
                     <label>Địa chỉ nhân viên:</label>
-                    <input type="text" value="<?php echo $adress ?>" name="adress" class="form-control">
+                    <input type="text" value="<?php echo $address ?>" name="address" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Lương nhân viên:</label>
