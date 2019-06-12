@@ -86,7 +86,7 @@ if (isset($_POST) && !empty($_POST)){
                     <label>Lương nhân viên:</label>
                     <input type="text" value="<?php echo $salary ?>" name="salary" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">tạo nhân viên</button>
+                <button type="submit" class="btn btn-primary">Thêm nhân viên mới</button>
             </form>
         </div>
     </div>

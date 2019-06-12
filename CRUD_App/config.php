@@ -12,6 +12,7 @@
     define("DB_NAME","app_crud");
 
     $connection = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    mysqli_set_charset($connection, 'UTF8');
 
 if ($connection->connect_error) {
     /**
