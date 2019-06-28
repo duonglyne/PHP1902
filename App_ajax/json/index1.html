@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert from js to json</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var student;
+
+    student = {};
+
+    student.name = "Lý văn Dưỡng";
+    student.age = 21;
+    student.location = "Bắc Giang";
+
+    console.log(student);
+
+    /**
+     * Chuyển đổi object trong js thành chuỗi json
+     * JSON.stringify()
+     */
+    var student_json = JSON.stringify(student);
+    console.log(student_json);
+    /**
+     * kết quả của phép chuyển đổi là một chuỗi json
+     * nó là một kiểu dữ liệu để lưu trữ và trao đổi thông tin
+     *  {"name":"Lý văn Dưỡng","age":21,"location":"Bắc Giang"}
+     */
+</script>
+</body>
+</html>
