@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các câu lệnh php artisan</title>
+</head>
+<body>
+    <pre>
+        Các câu lệnh artisan trong laravel
+        -  để di chuyển trong thư mục thì dùng câu lệnh cd
+        vd cd tên_thư_mục
+        còn muốn quay ngược ra ngoài thì cd ..
+
+        - artisan là công cụ các câu lệnh cho phép tạo nhanh các chức năng trong Laravel
+        như là : tạo controller, tạo model, tạo seeder, tạo migrate, tạo lại app key bảo mật ...
+        - để chạy được lệnh artisan trong Laravel thì cần truy cập vào thư mục gốc của ứng dụng(thư mục mẹ trực tiếp chứa file .env)
+        hoặc (thư mục mẹ trực tiếp chứa file artisan.php)
+
+        -  câu lệnh đầu tiên:
+        1. php artisan: câu lệnh này sẽ hiển thị tất cả cá câu lệnh artisan kèm theo ý nghĩa của nó
+
+        2. tạo ra một controller:
+        php artisan make:controller TestController
+        (lưu ý nếu chỉ gõ trên controller thì controller đó sẽ tạo trực tiếp trong folder
+        app/Http/Controller)
+
+        3. trong 1 hệ thống phức tạp thì controller sẽ được chia vào nhiều folder khác nhau
+        nếu muốn tạo một controller nằm trong một thư mục đường dẫn folder thì gõ như sau
+        php artisan make:controller Backend/ProductController
+        php artisan make:controller Frontend/ProductController
+    </pre>
+</body>
+</html>
