@@ -28,6 +28,17 @@
         nếu muốn tạo một controller nằm trong một thư mục đường dẫn folder thì gõ như sau
         php artisan make:controller Backend/ProductController
         php artisan make:controller Frontend/ProductController
+
+        4. tạo model trong Laravel
+        Model trong Laravel mặc định nằm trực tiếp trong app
+        Model mặc định user.php trong folder app
+        - tạo ra một folder là "Models" và một model trực tiếp trong nó
+        => php artisan make:model Models/TestModel
+
+        - tạo một model nằm trong thư mục cấp 2 của Models
+
+         php artisan make:model Models/Backend/ProductModel
+         php artisan make:model Models/Fronteng/ProductModel
     </pre>
 </body>
 </html>
