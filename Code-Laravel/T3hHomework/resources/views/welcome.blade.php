@@ -71,7 +71,9 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('admin.auth.login') }}">Admin</a>
+                        <a href="{{ route('admin.dashboard') }}">Admin</a>
+                        <a href="{{ route('seller.dashboard') }}">Seller</a>
+                        <a href="{{ route('shipper.dashboard') }}">Shipper</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
