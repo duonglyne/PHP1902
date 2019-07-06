@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.shop.category.index');
+//    return view('frontend.homepages.index');
 });
 
 Auth::routes();
@@ -70,6 +71,109 @@ Route::prefix('admin')->group(function (){
      */
 
     Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
+    /**
+     * Quản trị website
+     * thiết kế các chức năng
+     */
+    // route for shop
+    Route::get('shop/category', function(){
+       return view('admin.content.shop.category.index');
+    });
+
+    Route::get('shop/product', function(){
+        return view('admin.content.shop.product.index');
+    });
+
+    Route::get('shop/oder', function(){
+        return view('admin.content.shop.oder.index');
+    });
+
+    Route::get('shop/brands', function(){
+        return view('admin.content.shop.brands.index');
+    });
+
+    Route::get('shop/review', function(){
+        return view('admin.content.shop.review.index');
+    });
+
+    Route::get('shop/customer', function(){
+        return view('admin.content.shop.customer.index');
+    });
+
+    Route::get('shop/statistic', function(){
+        return view('admin.content.shop.statistic.index');
+    });
+    //route for oder
+    Route::get('oder', function(){
+        return view('admin.content.oder.index');
+    });
+
+    // Route for content
+    Route::get('content/category', function(){
+        return view('admin.content.content.category.index');
+    });
+
+    Route::get('content/page', function(){
+        return view('admin.content.content.page.index');
+    });
+
+    Route::get('content/post', function(){
+        return view('admin.content.content.post.index');
+    });
+
+    Route::get('content/tag', function(){
+        return view('admin.content.content.tag.index');
+    });
+    // roure for menu
+    Route::get('menu', function(){
+        return view('admin.content.menu.menu.index');
+    });
+
+    Route::get('menu-item', function(){
+        return view('admin.content.menu.menu-item.index');
+    });
+    // route for admin-user
+    Route::get('users', function(){
+        return view('admin.content.admin.index');
+    });
+
+    // route for banners
+    Route::get('banners', function(){
+        return view('admin.content.banner.index');
+    });
+
+    //route for contact
+    Route::get('contacts', function(){
+        return view('admin.content.contact.index');
+    });
+
+    // route for global setting
+    Route::get('config', function(){
+        return view('admin.content.global-setting.index');
+    });
+
+    // route for media
+    Route::get('media', function(){
+        return view('admin.content.media.index');
+    });
+
+    // route for newletters
+    Route::get('newletters', function(){
+        return view('admin.content.newletter.index');
+    });
+
+    //route for email
+    Route::get('email/inbox', function(){
+        return view('admin.content.email.inbox.index');
+    });
+
+    Route::get('email/draft', function(){
+        return view('admin.content.email.draft.index');
+    });
+
+    Route::get('email/send', function(){
+        return view('admin.content.email.send.index');
+    });
 });
 
 /**
@@ -176,4 +280,6 @@ Route::prefix('shipper')->group(function(){
 
     Route::post('logout', 'Auth\Shipper\LoginController@logout')->name('shipper.auth.logout');
 });
+
+
 
