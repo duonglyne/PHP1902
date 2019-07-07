@@ -14,17 +14,37 @@
 Route::get('/', function () {
     return view('simpleadmin.homepage.homepage1');
 });
+//Quản trị
+Route::get('category', function () {
+    return view('simpleadmin.category.category');
+});
+
+Route::get('article', function () {
+    return view('simpleadmin.article.article');
+});
+Route::get('users', function () {
+    return view('simpleadmin.users.users');
+});
+Route::get('banners', function () {
+    return view('simpleadmin.banners.banners');
+});
+Route::get('products', function () {
+    return view('simpleadmin.products.products');
+});
+
+Route::get('email', function () {
+    return view('simpleadmin.email.email');
+});
+
+Route::get('phanquyen', function () {
+    return view('simpleadmin.phanquyen.phanquyen');
+});
+
+
+
+
 
 // Nghịch vớ vẩn trong buổi 1 Laravel
-
-Route::get('/abc', function(){
-    echo "chào bạn";
-});
-
-Route::get('/def', function(){
-    return view('def');
-});
-
 Route::get('/formLogin', function(){
    return view('formLogin');
 });
