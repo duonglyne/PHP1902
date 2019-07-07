@@ -39,6 +39,26 @@
 
          php artisan make:model Models/Backend/ProductModel
          php artisan make:model Models/Fronteng/ProductModel
+
+        5. tạo migration (file dùng để tạo table trong CSDL mà không cần tương tác với navicat hoặc phpmyadmin)
+
+        php artisan make:migration create_tên_bảng_table
+
+        => php artisan make:migration create_product_table
+        sau khi chạy xong câu lệnh trên thì vào folder database/migrations
+        sẽ thấy 1 file php có định dạng " thời_gian_tên_migrantion" vừa tao
+
+        php artisan make:migration create_category_table
+
+        6. sau khi migration và cấu hình đúng tên CSDL đã tồn tại trong .env
+        => tạo từ migration thành bảng CSDL thật thì chạy : php artisan migrate
+
+        7. tạo auth đơn giản trong laravel
+
+        php artisan make:auth
+
+        8. sau khi tạo một migration
+        để đồng bộ CSDL => php artisan migrate
     </pre>
 </body>
 </html>
