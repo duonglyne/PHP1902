@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('frontend.shop.category.index');
-//    return view('frontend.homepages.index');
+//    return view('frontend.shop.category.index');
+    return view('frontend.homepages.index');
 });
 
 Auth::routes();
@@ -76,30 +76,69 @@ Route::prefix('admin')->group(function (){
      * thiết kế các chức năng
      */
     // route for shop
-    Route::get('shop/category', function(){
-       return view('admin.content.shop.category.index');
-    });
+    /**
+     * Route quản lý danh mục
+     * shop/category
+     */
+    Route::get('shop/category', 'Admin\ShopCategoryController@index')->name('category.index');
+    Route::get('shop/category/create', 'Admin\ShopCategoryController@create')->name('add-category');
+    Route::get('shop/category/{id}/edit', 'Admin\ShopCategoryController@edit')->name('edit-category');
+    Route::get('shop/category/{id}/delete', 'Admin\ShopCategoryController@delete')->name('delete-category');
 
-    Route::get('shop/product', function(){
-        return view('admin.content.shop.product.index');
-    });
+    Route::post('shop/category', 'Admin\ShopCategoryController@store')->name('add-category-post');
+    Route::post('shop/category/{id}/update', 'Admin\ShopCategoryController@update')->name('update-category-post');
+    Route::post('shop/category/{id}/destroy', 'Admin\ShopCategoryController@destroy')->name('destroy-category-post');
 
+
+    /**
+     * Route quản lý sản phẩm
+     * shop/product
+     */
+    Route::get('shop/product', 'Admin\ShopProductController@index');
+    Route::get('shop/product/create', 'Admin\ShopProductController@create')->name('add-product');
+    Route::get('shop/product/{id}/edit', 'Admin\ShopProductController@edit')->name('edit-product');
+    Route::get('shop/product/{id}/delete', 'Admin\ShopProductController@delete')->name('delete-product');
+
+    Route::post('shop/product', 'Admin\ShopProductController@store')->name('add-product-post');
+
+    /**
+     * Route quản lý đặt hàng
+     * shop/oder
+     */
     Route::get('shop/oder', function(){
         return view('admin.content.shop.oder.index');
     });
 
+    /**
+     * Route quản lý brands
+     * shop/brands
+     */
     Route::get('shop/brands', function(){
         return view('admin.content.shop.brands.index');
     });
 
+
+    /**
+     * Route quản lý phản hồi
+     * shop/review
+     */
     Route::get('shop/review', function(){
         return view('admin.content.shop.review.index');
     });
 
+    /**
+     * Route quản lý thông tin khách hàng
+     * shop/customer
+     */
     Route::get('shop/customer', function(){
         return view('admin.content.shop.customer.index');
     });
 
+
+    /**
+     * Route quản lý statisstic
+     * shop/statisstic
+     */
     Route::get('shop/statistic', function(){
         return view('admin.content.shop.statistic.index');
     });

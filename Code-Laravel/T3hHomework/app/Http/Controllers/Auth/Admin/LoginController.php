@@ -49,7 +49,7 @@ class LoginController extends Controller
      */
 
     public function logout(){
-        Auth::guard('admin')->logout();
+        Auth::logout();
 
         // chuyển hướng về trang login của admin
         return redirect()->route('admin.auth.login');
