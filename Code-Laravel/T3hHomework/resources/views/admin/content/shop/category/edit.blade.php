@@ -13,6 +13,15 @@
 <div class="container">
     <div class="row">
         <div class="form-three widget-shadow">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form name="category" action="{{url('admin/shop/category/'.$cats->id.'/update')}}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">

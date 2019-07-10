@@ -1,7 +1,7 @@
 @extends('admin.layouts.glance')
 
 @section('title')
-Glance Design Dashboard an admin_assets
+Quản lý dữ liệu
 @endsection
 
 @section('content')

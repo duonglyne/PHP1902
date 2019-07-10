@@ -100,6 +100,8 @@ Route::prefix('admin')->group(function (){
     Route::get('shop/product/{id}/delete', 'Admin\ShopProductController@delete')->name('delete-product');
 
     Route::post('shop/product', 'Admin\ShopProductController@store')->name('add-product-post');
+    Route::post('shop/product/{id}/update', 'Admin\ShopProductController@update')->name('update-product-post');
+    Route::post('shop/product/{id}/destroy', 'Admin\ShopProductController@destroy')->name('destroy-product-post');
 
     /**
      * Route quản lý đặt hàng

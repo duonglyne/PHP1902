@@ -37,6 +37,14 @@ class ShopCategoryController extends Controller
     public function store(Request $request){
         $input = $request->all();
         $item = new ShopCategoryModel();
+        // kiểm tra dữ liệu nhập vào
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'images' => 'required',
+            'intro' => 'required',
+            'desc' => 'required',
+        ]);
 
         // gán giá trị mới
         $item->name = $input['name'];
@@ -53,6 +61,15 @@ class ShopCategoryController extends Controller
     public function update(Request $request, $id){
         $item = ShopCategoryModel::find($id);
         $input = $request->all();
+
+        // kiểm tra dữ liệu nhập vào
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'images' => 'required',
+            'intro' => 'required',
+            'desc' => 'required',
+        ]);
 
         // gán giá trị mới
         $item->name = $input['name'];

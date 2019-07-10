@@ -41,7 +41,15 @@
                         <td>{{$product->priceCore}}</td>
                         <td>{{$product->priceSale}}</td>
                         <td>{{$product->stock}}</td>
-                        <td>{{$product->cat_id}}</td>
+
+                        <td>
+                            @foreach($cats as $cat)
+                                @if($product->cat_id == $cat->id)
+                                    <?php echo "$cat->name"; ?>
+                                @endif
+                            @endforeach
+                        </td>
+
                         <td><a class="btn btn-warning" href="{{url('/admin/shop/product/'.$product->id.'/edit')}}">Sửa</a>
                             <a class="btn btn-danger" href="{{url('/admin/shop/product/'.$product->id.'/delete')}}">Xóa</a>
                         </td>

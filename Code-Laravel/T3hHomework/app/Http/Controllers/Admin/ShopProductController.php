@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ShopCategoryModel;
 use App\Model\Admin\ShopProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,6 +20,8 @@ class ShopProductController extends Controller
         $products = DB::table('shop_product')->paginate(6);
         $data = array();
         $data['products'] = $products;
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
         return view('admin.content.shop.product.index', $data);
     }
 
@@ -30,6 +33,8 @@ class ShopProductController extends Controller
     public function create()
     {
         $data = array();
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
         return view('admin.content.shop.product.submit', $data);
     }
 
@@ -50,6 +55,8 @@ class ShopProductController extends Controller
     {
         $product = ShopProductModel::find($id);
         $data = array();
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
         $data['product'] = $product;
         return view('admin.content.shop.product.edit', $data);
     }
@@ -77,13 +84,53 @@ class ShopProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = ShopProductModel::find($id);
+        $input = $request->all();
+
+        // kiểm tra dữ liệu nhập vào
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'images' => 'required',
+            'intro' => 'required',
+            'desc' => 'required',
+            'priceCore' => 'required|numeric',
+            'priceSale' => 'required|numeric',
+            'stock' => 'required',
+        ]);
+
+        // gán giá trị mới
+        $item->name = $input['name'];
+        $item->slug = $input['slug'];
+        $item->images = $input['images'];
+        $item->intro = $input['intro'];
+        $item->desc = $input['desc'];
+        $item->priceCore = $input['priceCore'];
+        $item->priceSale = $input['priceSale'];
+        $item->stock = $input['stock'];
+        $item->cat_id = $input['cat_id'];
+
+        $item->save();
+
+        return redirect('/admin/shop/product');
     }
 
     public function store(Request $request)
     {
         $input = $request->all();
         $item = new ShopProductModel();
+
+        // kiểm tra dữ liệu nhập vào
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'images' => 'required',
+            'intro' => 'required',
+            'desc' => 'required',
+            'priceCore' => 'required|numeric',
+            'priceSale' => 'required|numeric',
+            'stock' => 'required',
+        ]);
 
         // gán giá trị mới
         $item->name = $input['name'];
@@ -122,6 +169,8 @@ class ShopProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = ShopProductModel::find($id);
+        $item->delete();
+        return redirect('/admin/shop/product');
     }
 }
