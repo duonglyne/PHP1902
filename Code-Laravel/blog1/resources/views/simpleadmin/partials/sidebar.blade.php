@@ -18,7 +18,7 @@
 
 
             <li>
-                <a href="{{url('/users')}}"><i class="fa fa-qrcode "></i>Quản trị người dùng</a>
+                <a href="{{url('/users')}}"><i class="fa fa-user "></i>Quản trị người dùng</a>
             </li>
             <li>
                 <a href="{{url('/banners')}}"><i class="fa fa-bar-chart-o"></i>Quản trị banners</a>

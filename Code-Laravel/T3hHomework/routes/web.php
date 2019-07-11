@@ -150,9 +150,17 @@ Route::prefix('admin')->group(function (){
     });
 
     // Route for content
-    Route::get('content/category', function(){
-        return view('admin.content.content.category.index');
-    });
+    /**
+     * Content category
+     */
+    Route::get('content/category', 'Admin\ContentCategoryController@index')->name('content-category-index');
+    Route::get('content/category/create', 'Admin\ContentCategoryController@create')->name('add-content-category');
+    Route::get('content/category/{id}/edit', 'Admin\ContentCategoryController@edit')->name('edit-content-category');
+    Route::get('content/category/{id}/delete', 'Admin\ContentCategoryController@delete')->name('delete-content-category');
+
+    Route::post('content/category', 'Admin\ContentCategoryController@store')->name('add-content-category-post');
+    Route::post('content/category/{id}/update', 'Admin\ContentCategoryController@update')->name('update-content-category-post');
+    Route::post('content/category/{id}/destroy', 'Admin\ContentCategoryController@destroy')->name('delete-content-category-post');
 
     Route::get('content/page', function(){
         return view('admin.content.content.page.index');

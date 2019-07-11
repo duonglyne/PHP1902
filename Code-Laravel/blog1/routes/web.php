@@ -12,29 +12,68 @@
 */
 
 Route::get('/', function () {
-    return view('simpleadmin.homepage.homepage1');
+    return view('shoppy-admin.homepage.homepage');
 });
-//Quản trị
+/**
+ * Quản trị danh mục
+ */
 Route::get('category', function () {
-    return view('simpleadmin.category.category');
+    return view('shoppy-admin.category.category');
+});
+/**
+ * Quản trị bài viết
+ */
+Route::get('article', function () {
+    return view('shoppy-admin.article.article');
+});
+Route::get('article-review', function () {
+    return view('shoppy-admin.article.article_review');
+});
+/**
+ * quản trị người dùng
+ */
+Route::get('users', function () {
+    return view('shoppy-admin.users.users');
 });
 
-Route::get('article', function () {
-    return view('simpleadmin.article.article');
+Route::get('users-admin', function () {
+    return view('shoppy-admin.users.users-admin');
 });
-Route::get('users', function () {
-    return view('simpleadmin.users.users');
+
+/**
+ * bản đồ
+ */
+Route::get('maps', function () {
+    return view('shoppy-admin.maps.maps');
 });
+/**
+ * Quản trị banners
+ */
+
 Route::get('banners', function () {
-    return view('simpleadmin.banners.banners');
+    return view('shoppy-admin.banners.banners');
 });
+Route::get('banners-page', function () {
+    return view('shoppy-admin.banners.banners-page');
+});
+/**
+ * Quản trị sản phẩm
+ */
 Route::get('products', function () {
-    return view('simpleadmin.products.products');
+    return view('shoppy-admin.products.products');
 });
+
+/**
+ * quản trị email
+ */
 
 Route::get('email', function () {
-    return view('simpleadmin.email.email');
+    return view('shoppy-admin.email.email');
 });
+
+/**
+ * Quản trị phân quyền
+ */
 
 Route::get('phanquyen', function () {
     return view('simpleadmin.phanquyen.phanquyen');
@@ -62,3 +101,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('admin', function(){
 //   return view('simpleadmin');
 //});
+
+/**
+ * Route for shoppy admin
+ */
+
+
+
