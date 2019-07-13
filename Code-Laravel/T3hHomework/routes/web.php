@@ -165,10 +165,17 @@ Route::prefix('admin')->group(function (){
     Route::get('content/page', function(){
         return view('admin.content.content.page.index');
     });
+    /**
+     * Route for content posts
+     */
+    Route::get('content/post', 'Admin\ContentPostController@index')->name('content-post-index');
+    Route::get('content/post/create', 'Admin\ContentPostController@create')->name('add-content-post');
+    Route::get('content/post/{id}/edit', 'Admin\ContentPostController@edit')->name('edit-content-post');
+    Route::get('content/post/{id}/delete', 'Admin\ContentPostController@delete')->name('delete-content-post');
 
-    Route::get('content/post', function(){
-        return view('admin.content.content.post.index');
-    });
+    Route::post('content/post', 'Admin\ContentPostController@store')->name('add-content-post-post');
+    Route::post('content/post/{id}/update', 'Admin\ContentPostController@update')->name('update-content-post-post');
+    Route::post('content/post/{id}/destroy', 'Admin\ContentPostController@destroy')->name('delete-content-post-post');
 
     Route::get('content/tag', function(){
         return view('admin.content.content.tag.index');

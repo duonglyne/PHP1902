@@ -45,7 +45,7 @@
                         <td>
                             @foreach($cats as $cat)
                                 @if($product->cat_id == $cat->id)
-                                    <?php echo "$cat->name"; ?>
+                                    {{$cat->name}}
                                 @endif
                             @endforeach
                         </td>

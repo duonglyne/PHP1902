@@ -10,7 +10,7 @@
     <div class="container ">
         <div class="row">
             <div class="">
-                <form name="category" action="{{url('admin/Content/category/'.$cats->id.'/destroy')}}" method="post" class="">
+                <form name="category" action="{{url('admin/content/category/'.$cats->id.'/destroy')}}" method="post" class="">
                     @csrf
                     <div class="">
                         <button type="submit" class="btn btn-primary ">Xóa</button>
