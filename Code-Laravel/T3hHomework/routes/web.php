@@ -162,9 +162,17 @@ Route::prefix('admin')->group(function (){
     Route::post('content/category/{id}/update', 'Admin\ContentCategoryController@update')->name('update-content-category-post');
     Route::post('content/category/{id}/destroy', 'Admin\ContentCategoryController@destroy')->name('delete-content-category-post');
 
-    Route::get('content/page', function(){
-        return view('admin.content.content.page.index');
-    });
+    /**
+     * Route for content page
+     */
+    Route::get('content/page', 'Admin\ContentPageController@index')->name('content-page-index');
+    Route::get('content/page/create', 'Admin\ContentPageController@create')->name('add-content-page');
+    Route::get('content/page/{id}/edit', 'Admin\ContentPageController@edit')->name('edit-content-page');
+    Route::get('content/page/{id}/delete', 'Admin\ContentPageController@delete')->name('delete-content-page');
+
+    Route::post('content/page', 'Admin\ContentPageController@store')->name('add-content-page-post');
+    Route::post('content/page/{id}/update', 'Admin\ContentPageController@update')->name('update-content-page-post');
+    Route::post('content/page/{id}/destroy', 'Admin\ContentPageController@destroy')->name('delete-content-page-post');
     /**
      * Route for content posts
      */
@@ -176,18 +184,46 @@ Route::prefix('admin')->group(function (){
     Route::post('content/post', 'Admin\ContentPostController@store')->name('add-content-post-post');
     Route::post('content/post/{id}/update', 'Admin\ContentPostController@update')->name('update-content-post-post');
     Route::post('content/post/{id}/destroy', 'Admin\ContentPostController@destroy')->name('delete-content-post-post');
+    /**
+     * Route for content tags
+     */
+    Route::get('content/tag', 'Admin\ContentTagController@index')->name('content-tag-index');
+    Route::get('content/tag/create', 'Admin\ContentTagController@create')->name('add-content-tag');
+    Route::get('content/tag/{id}/edit', 'Admin\ContentTagController@edit')->name('edit-content-tag');
+    Route::get('content/tag/{id}/delete', 'Admin\ContentTagController@delete')->name('delete-content-tag');
 
-    Route::get('content/tag', function(){
-        return view('admin.content.content.tag.index');
-    });
-    // roure for menu
-    Route::get('menu', function(){
-        return view('admin.content.menu.menu.index');
-    });
+    Route::post('content/tag', 'Admin\ContentTagController@store')->name('add-content-tag-post');
+    Route::post('content/tag/{id}/update', 'Admin\ContentTagController@update')->name('update-content-tag-post');
+    Route::post('content/tag/{id}/destroy', 'Admin\ContentTagController@destroy')->name('delete-content-tag-post');
 
-    Route::get('menu-item', function(){
-        return view('admin.content.menu.menu-item.index');
-    });
+
+    /**
+     * Route for menu
+     */
+
+    Route::get('menu', 'Admin\MenuController@index')->name('menu-index');
+    Route::get('menu/create', 'Admin\MenuController@create')->name('add-menu');
+    Route::get('menu/{id}/edit', 'Admin\MenuController@edit')->name('edit-menu');
+    Route::get('menu/{id}/delete', 'Admin\MenuController@delete')->name('delete-menu');
+
+    Route::post('menu', 'Admin\MenuController@store')->name('add-menu-post');
+    Route::post('menu/{id}/update', 'Admin\MenuController@update')->name('update-menu-post');
+    Route::post('menu/{id}/destroy', 'Admin\MenuController@destroy')->name('delete-menu-post');
+
+    /**
+     * Route for menu-item
+     */
+
+    Route::get('menu-item', 'Admin\MenuItemController@index')->name('menu-item-index');
+    Route::get('menu-item/create', 'Admin\MenuItemController@create')->name('add-menu-item');
+    Route::get('menu-item/{id}/edit', 'Admin\MenuItemController@edit')->name('edit-menu-item');
+    Route::get('menu-item/{id}/delete', 'Admin\MenuItemController@delete')->name('delete-menu-item');
+
+    Route::post('menu-item', 'Admin\MenuItemController@store')->name('add-menu-item-post');
+    Route::post('menu-item/{id}/update', 'Admin\MenuItemController@update')->name('update-menu-item-post');
+    Route::post('menu-item/{id}/destroy', 'Admin\MenuItemController@destroy')->name('delete-menu-item-post');
+
+
     // route for admin-user
     Route::get('users', function(){
         return view('admin.content.admin.index');

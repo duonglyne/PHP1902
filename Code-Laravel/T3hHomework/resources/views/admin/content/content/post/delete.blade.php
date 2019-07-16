@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="" style="margin: 20px 0">
-        <a href="{{url('content/post')}}" class="btn btn-success">Quản lý sản phẩm</a>
+        <a href="{{url('admin/content/post')}}" class="btn btn-success">Quản lý bài viết</a>
     </div>
 
 @endsection

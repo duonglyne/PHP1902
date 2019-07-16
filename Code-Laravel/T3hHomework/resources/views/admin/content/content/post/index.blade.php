@@ -18,11 +18,7 @@
                     <th>STT</th>
                     <th>Tên bài viết</th>
                     <th>Tác giả</th>
-                    <th>Slug</th>
                     <th>Ảnh</th>
-                    <th>Mô tả ngắn</th>
-                    <th>Mô tả</th>
-                    <th>Danh mục</th>
                     <th>Số lượt xem</th>
                     <th>Actions</th>
                 </tr>
@@ -34,17 +30,7 @@
                         <th scope="row">{{$post->id}}</th>
                         <td>{{$post->name}}</td>
                         <td>{{$post->author_id}}</td>
-                        <td>{{$post->slug}}</td>
                         <td><img src="{{$post->images}}" alt=""></td>
-                        <td>{{$post->intro}}</td>
-                        <td>{{$post->desc}}</td>
-                        <td>
-                            @foreach($cats as $cat)
-                                @if($post->cat_id == $cat->id)
-                                    {{$cat->name}}
-                                @endif
-                            @endforeach
-                        </td>
                         <td>{{$post->view}}</td>
                         <td><a class="btn btn-warning" href="{{url('/admin/content/post/'.$post->id.'/edit')}}">Sửa</a>
                             <a class="btn btn-danger" href="{{url('/admin/content/post/'.$post->id.'/delete')}}">Xóa</a>

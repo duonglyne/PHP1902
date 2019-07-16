@@ -1,0 +1,58 @@
+
+@extends('admin.layouts.glance')
+
+@section('title')
+    Sửa menu
+@endsection
+
+@section('content')
+    <h3>Sửa menu {{$menu->id.' : '.$menu->name}}</h3>
+    <div class="" style="margin: 20px 0">
+        <a href="{{url('admin/menu')}}" class="btn btn-success">Quản lý menu</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="form-three widget-shadow">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form name="category" action="{{url('admin/menu/'.$menu->id.'/update')}}" method="post" class="form-horizontal">
+                    @csrf
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Tên danh mục</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" value="{{$menu->name}}" class="form-control1" id="focusedinput" placeholder="Tên danh mục">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileinput" class="col-sm-2 control-label">Slug</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="slug" value="{{$menu->slug}}" class="form-control1" id="fileinput" placeholder="slug">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loactioninput" class="col-sm-2 control-label">Vị Trí</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="location" class="form-control1" value="{{$menu->location}}" class="" id="locationinput" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
+                        <div class="col-sm-8"><textarea name="desc"  id="txtarea1" cols="50" rows="4" class="form-control1">{{$menu->desc}}</textarea></div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
+

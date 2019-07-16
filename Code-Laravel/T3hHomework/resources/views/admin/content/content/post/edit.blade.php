@@ -8,7 +8,7 @@
 @section('content')
     <h3>Sửa bài viết {{$post->id.' : '.$post->name}}</h3>
     <div class="" style="margin: 20px 0">
-        <a href="{{url('shop/product')}}" class="btn btn-success">Quản lý sản phẩm</a>
+        <a href="{{url('admin/content/post')}}" class="btn btn-success">Quản lý bài viết</a>
     </div>
     <div class="container">
         <div class="row">
