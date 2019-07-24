@@ -11,7 +11,7 @@
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">
-            <h4>Tổng số: {{count($cats)}}</h4>
+            <h4>Tổng số: {{count($posts)}}</h4>
             <table class="table table-bordered">
                 <thead>
                 <tr>

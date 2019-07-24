@@ -13,11 +13,11 @@
 
     <!-- //header-ends -->
     <!-- main content start-->
-    <div id="page-wrapper">
+
         <div class="main-page">
             @yield('content')
         </div>
-    </div>
+
     <!--footer-->
     @include('admin.partials.footer')
     <!--//footer-->

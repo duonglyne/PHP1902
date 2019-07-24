@@ -24,26 +24,31 @@
                 <form name="category" action="{{route('add-menu-post')}}" method="post" class="form-horizontal">
                     @csrf
                     <div class="form-group">
-                        <label for="focusedinput" class="col-sm-2 control-label">Tên bài viết</label>
+                        <label for="focusedinput" class="col-sm-2 control-label">Tên menu</label>
                         <div class="col-sm-8">
                             <input type="text" name="name" value="{{old('name')}}" class="form-control1" id="focusedinput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="fileinput" class="col-sm-2 control-label">Slug</label>
+                        <label for="sluginput" class="col-sm-2 control-label">Slug</label>
                         <div class="col-sm-8">
                             <input type="text" name="slug" value="{{old('slug')}}" class="form-control1" id="sluginput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
-                        <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1">{{old('desc')}}</textarea></div>
+                        <label for="menuinput" class="col-sm-2 control-label">Vị trí</label>
+                        <div class="col-sm-8">
+                            <select name="location" id="menuinput">
+                                <option value="0">Không hiện</option>
+                                @foreach($locations as $key_local => $location)
+                                    <option value="{{$key_local}}" {{($key_local == old('location'))? 'selected' : ''}}>{{$location}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="txtarea1" class="col-sm-2 control-label">Vị trí</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="location" value="{{old('location')}}" class="form-control1" id="locationinput" >
-                        </div>
+                        <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
+                        <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="mytinymce form-control1">{{old('desc')}}</textarea></div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary ">Submit</button>

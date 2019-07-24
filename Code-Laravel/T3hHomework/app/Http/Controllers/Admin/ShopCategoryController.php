@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class ShopCategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+
     public function index(){
         $items = DB::table('shop_category')->paginate(6);
         $data = array();

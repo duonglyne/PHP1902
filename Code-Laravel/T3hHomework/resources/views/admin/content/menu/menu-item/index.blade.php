@@ -17,8 +17,8 @@
                 <tr>
                     <th>STT</th>
                     <th>Tên</th>
+                    <th>Parent</th>
                     <th>Menu</th>
-                    <th>Mô tả</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -26,19 +26,18 @@
 
                 @foreach($menuItems as $menuItem)
                     <tr>
-                        <th scope="row">{{$menuItem->id}}</th>
-                        <td>{{$menuItem->name}}</td>
-                        <td>{{$menuItem->menu_id}}</td>
-                        <td>{{$menuItem->desc}}</td>
-                        <td><a class="btn btn-warning" href="{{url('/admin/menu-item/'.$menuItem->id.'/edit')}}">Sửa</a>
-                            <a class="btn btn-danger" href="{{url('/admin/menu-item/'.$menuItem->id.'/delete')}}">Xóa</a>
+                        <th scope="row">{{ $menuItem['id'] }}</th>
+                        <td>{{ str_repeat('-', $menuItem['level'] - 1) . ' ' . $menuItem['name'] }}</td>
+                        <td>{{ $menuItem['parent_id'] }}</td>
+                        <td>{{ $menuItem['menu_id'] }}</td>
+                        <td><a class="btn btn-warning" href="{{url('/admin/menu-item/'.$menuItem['id'].'/edit')}}">Sửa</a>
+                            <a class="btn btn-danger" href="{{url('/admin/menu-item/'.$menuItem['id'].'/delete')}}">Xóa</a>
                         </td>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
             <div class="text-center">
-                {{$menuItems->links()}}
             </div>
 
         </div>

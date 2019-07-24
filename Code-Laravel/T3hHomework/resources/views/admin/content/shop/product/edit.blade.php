@@ -8,7 +8,7 @@
 @section('content')
     <h3>Sửa danh mục sản phẩm {{$product->id.' : '.$product->name}}</h3>
     <div class="" style="margin: 20px 0">
-        <a href="{{url('shop/product')}}" class="btn btn-success">Quản lý sản phẩm</a>
+        <a href="{{route('product-index')}}" class="btn btn-success">Quản lý sản phẩm</a>
     </div>
     <div class="container">
         <div class="row">
@@ -47,11 +47,37 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="imageinput" class="col-sm-2 control-label">Image</label>
-                        <div class="col-sm-8">
-                            <input type="file" name="images" class="" id="imageinput" >
+                    <?php
+                    $images = $product->images ? json_decode($product->images) : array();
+                    $i = 0;
+                    ?>
+
+                    @foreach($images as $image)
+                        <?php $i++?>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Images</label>
+                            <div class="col-sm-8">
+                        <span class="input-group-btn">
+                         <a id="lfm{{$i}}" data-input="thumbnail{{$i}}" data-preview="holder{{$i}}" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                            <a class="btn btn-warning remove-image">
+                           <i class="fa fa-remove"></i> Xóa
+                         </a>
+                       </span>
+                                <input id="thumbnail{{$i}}" type="text" name="images[]" value="{{$image}}" class="form-control"  placeholder="Default Input">
+                                <img id="holder{{$i}}" src="{{asset($image)}}" style="margin-top:15px;max-height:100px;">
+                            </div>
                         </div>
+                        @endforeach
+
+
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Thêm ảnh</label>
+                        <div class="col-sm-8">
+                            <a id="plus-image" class="btn btn-success">
+                                <i class="fa fa-plus"></i> Thêm
+                            </a></div>
                     </div>
                     <div class="form-group">
                         <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>

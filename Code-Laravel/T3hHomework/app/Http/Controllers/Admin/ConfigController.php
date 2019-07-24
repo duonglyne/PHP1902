@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class ConfigController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+
     public function index()
     {
         $menuItems = DB::table('global_settings')->paginate(6);

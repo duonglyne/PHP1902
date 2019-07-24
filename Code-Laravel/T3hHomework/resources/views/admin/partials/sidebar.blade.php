@@ -32,7 +32,9 @@
                             <li><a href="{{ url('/admin/shop/oder') }}"><i class="fa fa-angle-right"></i> Đơn hàng</a></li>
                             <li><a href="{{ url('/admin/shop/review') }}"><i class="fa fa-angle-right"></i> Đánh giá</a></li>
                             <li><a href="{{ url('/admin/shop/customer') }}"><i class="fa fa-angle-right"></i> Khách hàng</a></li>
-                            <li><a href="{{ url('/admin/shop/brands') }}"><i class="fa fa-angle-right"></i> Nhãn hiệu</a></li>
+                            <li><a href="{{ url('/admin/shop/shipper') }}"><i class="fa fa-angle-right"></i> Nhà vận chuyển</a></li>
+                            <li><a href="{{ url('/admin/shop/seller') }}"><i class="fa fa-angle-right"></i> Nhà cung cấp</a></li>
+                            <li><a href="{{ url('/admin/shop/brand') }}"><i class="fa fa-angle-right"></i> Nhãn hiệu</a></li>
                             <li><a href="{{ url('/admin/shop/statistic') }}"><i class="fa fa-angle-right"></i> Thống kê</a></li>
                         </ul>
                     </li>
@@ -77,7 +79,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-angle-right"></i> Quản trị viên</a></li>
+                            <li><a href="{{ url('/admin/users-admin') }}"><i class="fa fa-angle-right"></i> Quản trị viên</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

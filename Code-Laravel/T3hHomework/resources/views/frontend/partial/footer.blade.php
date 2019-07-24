@@ -33,9 +33,32 @@
         <div class="col-md-3 footer-grids fgd4">
             <h4>My Account</h4>
             <ul>
+                @guest
+                    <li><a href="{{url('/login')}}">Login</a></li>
+                    @if (Route::has('register'))
+                        <li><a href="{{url('/register')}}">Register</a></li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
+
                 <li><a href="recommended.html">Recommended </a></li>
                 <li><a href="payment.html">Payments</a></li>
             </ul>

@@ -19,9 +19,9 @@ class LoginController extends Controller
     /**
      * Phương thức này trả về view để đăng nhập cho admin
      */
-    public function login(){
-        return view('admin.auth.login');
-    }
+//    public function login(){
+//        return view('admin.auth.login');
+//    }
 
     /**
      * Phương thức này dùng để đăng nhập cho admin

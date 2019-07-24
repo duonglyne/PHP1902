@@ -55,7 +55,10 @@ Route::prefix('admin')->group(function (){
      * route trả về view đăng nhập admin
      */
 
-    Route::get('login', 'Auth\Admin\LoginController@login')->name('admin.auth.login');
+    Route::get('login', 'AdminController@login')->name('admin.auth.login');
+//    Route::get('login', function(){
+//        echo "hihi";
+//    })->name('admin.auth.login');
 
 
     /**
@@ -63,14 +66,14 @@ Route::prefix('admin')->group(function (){
      * route xử lý quá trình đăng nhập admin
      */
 
-    Route::post('login', 'Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
+    Route::post('login', 'AdminController@loginAdmin')->name('admin.auth.loginAdmin');
 
     /**
      * method POST
      * Route dùng để đăng xuất
      */
 
-    Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
+    Route::post('logout', 'AdminController@logout')->name('admin.auth.logout');
     /**
      * Quản trị website
      * thiết kế các chức năng
@@ -94,7 +97,7 @@ Route::prefix('admin')->group(function (){
      * Route quản lý sản phẩm
      * shop/product
      */
-    Route::get('shop/product', 'Admin\ShopProductController@index');
+    Route::get('shop/product', 'Admin\ShopProductController@index')->name('product-index');
     Route::get('shop/product/create', 'Admin\ShopProductController@create')->name('add-product');
     Route::get('shop/product/{id}/edit', 'Admin\ShopProductController@edit')->name('edit-product');
     Route::get('shop/product/{id}/delete', 'Admin\ShopProductController@delete')->name('delete-product');
@@ -107,6 +110,7 @@ Route::prefix('admin')->group(function (){
      * Route quản lý đặt hàng
      * shop/oder
      */
+
     Route::get('shop/oder', function(){
         return view('admin.content.shop.oder.index');
     });
@@ -115,9 +119,15 @@ Route::prefix('admin')->group(function (){
      * Route quản lý brands
      * shop/brands
      */
-    Route::get('shop/brands', function(){
-        return view('admin.content.shop.brands.index');
-    });
+
+    Route::get('shop/brand', 'Admin\ShopBrandController@index')->name('brand-index');
+    Route::get('shop/brand/create', 'Admin\ShopBrandController@create')->name('add-brand');
+    Route::get('shop/brand/{id}/edit', 'Admin\ShopBrandController@edit')->name('edit-brand');
+    Route::get('shop/brand/{id}/delete', 'Admin\ShopBrandController@delete')->name('delete-brand');
+
+    Route::post('shop/brand', 'Admin\ShopBrandController@store')->name('add-brand-post');
+    Route::post('shop/brand/{id}/update', 'Admin\ShopBrandController@update')->name('update-brand-post');
+    Route::post('shop/brand/{id}/destroy', 'Admin\ShopBrandController@destroy')->name('destroy-brand-post');
 
 
     /**
@@ -132,10 +142,41 @@ Route::prefix('admin')->group(function (){
      * Route quản lý thông tin khách hàng
      * shop/customer
      */
-    Route::get('shop/customer', function(){
-        return view('admin.content.shop.customer.index');
-    });
+    Route::get('shop/customer', 'Admin\AdminManagerController@index')->name('customer-index');
+    Route::get('shop/customer/create', 'Admin\AdminManagerController@create')->name('add-customer');
+    Route::get('shop/customer/{id}/edit', 'Admin\AdminManagerController@edit')->name('edit-customer');
+    Route::get('shop/customer/{id}/delete', 'Admin\AdminManagerController@delete')->name('delete-customer');
 
+    Route::post('shop/customer', 'Admin\AdminManagerController@store')->name('add-customer-post');
+    Route::post('shop/customer/{id}/update', 'Admin\AdminManagerController@update')->name('update-customer-post');
+    Route::post('shop/customer/{id}/destroy', 'Admin\AdminManagerController@destroy')->name('delete-customer-post');
+
+    /**
+     * Route quản lý thông tin nhà vận chuyển
+     * shop/shipper
+     */
+    Route::get('shop/shipper', 'Admin\ShipperManagerController@index')->name('shipper-index');
+    Route::get('shop/shipper/create', 'Admin\ShipperManagerController@create')->name('add-shipper');
+    Route::get('shop/shipper/{id}/edit', 'Admin\ShipperManagerController@edit')->name('edit-shipper');
+    Route::get('shop/shipper/{id}/delete', 'Admin\ShipperManagerController@delete')->name('delete-shipper');
+
+    Route::post('shop/shipper', 'Admin\ShipperManagerController@store')->name('add-shipper-post');
+    Route::post('shop/shipper/{id}/update', 'Admin\ShipperManagerController@update')->name('update-shipper-post');
+    Route::post('shop/shipper/{id}/destroy', 'Admin\ShipperManagerController@destroy')->name('delete-shipper-post');
+
+
+    /**
+     * Route quản lý thông tin nhà cung cấp
+     * shop/seller
+     */
+    Route::get('shop/seller', 'Admin\SellerManagerController@index')->name('seller-index');
+    Route::get('shop/seller/create', 'Admin\SellerManagerController@create')->name('add-seller');
+    Route::get('shop/seller/{id}/edit', 'Admin\SellerManagerController@edit')->name('edit-seller');
+    Route::get('shop/seller/{id}/delete', 'Admin\SellerManagerController@delete')->name('delete-seller');
+
+    Route::post('shop/seller', 'Admin\SellerManagerController@store')->name('add-seller-post');
+    Route::post('shop/seller/{id}/update', 'Admin\SellerManagerController@update')->name('update-seller-post');
+    Route::post('shop/seller/{id}/destroy', 'Admin\SellerManagerController@destroy')->name('delete-seller-post');
 
     /**
      * Route quản lý statisstic
@@ -225,9 +266,17 @@ Route::prefix('admin')->group(function (){
 
 
     // route for admin-user
-    Route::get('users', function(){
-        return view('admin.content.admin.index');
-    });
+
+    Route::get('users-admin', 'Admin\AdminManagerController@index')->name('users-admin-index');
+    Route::get('users-admin/create', 'Admin\AdminManagerController@create')->name('add-users-admin');
+    Route::get('users-admin/{id}/edit', 'Admin\AdminManagerController@edit')->name('edit-users-admin');
+    Route::get('users-admin/{id}/delete', 'Admin\AdminManagerController@delete')->name('delete-users-admin');
+
+    Route::post('users-admin', 'Admin\AdminManagerController@store')->name('add-users-admin-post');
+    Route::post('users-admin/{id}/update', 'Admin\AdminManagerController@update')->name('update-users-admin-post');
+    Route::post('users-admin/{id}/destroy', 'Admin\AdminManagerController@destroy')->name('delete-users-admin-post');
+
+
 
     // route for banners
     Route::get('banners', function(){

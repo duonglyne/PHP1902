@@ -31,7 +31,7 @@
                         <td>{{$menu->name}}</td>
                         <td>{{$menu->slug}}</td>
                         <td>{{$menu->desc}}</td>
-                        <td>{{$menu->location}}</td>
+                        <td>{{$locations[$menu->location]}}</td>
                         <td><a class="btn btn-warning" href="{{url('/admin/menu/'.$menu->id.'/edit')}}">Sửa</a>
                             <a class="btn btn-danger" href="{{url('/admin/menu/'.$menu->id.'/delete')}}">Xóa</a>
                         </td>

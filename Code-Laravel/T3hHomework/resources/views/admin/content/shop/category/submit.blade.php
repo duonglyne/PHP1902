@@ -37,10 +37,27 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="imageinput" class="col-sm-2 control-label">Image</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-8">
-                        <input type="file" name="images" value="{{old('images')}}" class="" id="imageinput" >
+                        <span class="input-group-btn">
+                         <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                            <a class="btn btn-warning remove-image">
+                           <i class="fa fa-remove"></i> Xóa
+                         </a>
+                       </span>
+                        <input id="thumbnail1" type="text" name="images[]" value="" class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <img id="holder1" style="margin-top:15px;max-height:100px;">
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Thêm ảnh</label>
+                    <div class="col-sm-8">
+                        <a id="plus-image" class="btn btn-success">
+                            <i class="fa fa-plus"></i> Thêm
+                        </a></div>
                 </div>
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>

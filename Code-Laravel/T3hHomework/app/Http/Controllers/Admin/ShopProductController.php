@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class ShopProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -102,7 +109,7 @@ class ShopProductController extends Controller
         // gán giá trị mới
         $item->name = $input['name'];
         $item->slug = $input['slug'];
-        $item->images = $input['images'];
+        $item->images = isset($input['images'])? json_encode($input['images']) : "";
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
         $item->priceCore = $input['priceCore'];
@@ -135,7 +142,7 @@ class ShopProductController extends Controller
         // gán giá trị mới
         $item->name = $input['name'];
         $item->slug = $input['slug'];
-        $item->images = $input['images'];
+        $item->images = isset($input['images'])? json_encode($input['images']) : "";
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
         $item->priceCore = $input['priceCore'];

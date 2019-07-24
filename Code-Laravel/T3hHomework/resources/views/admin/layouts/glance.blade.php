@@ -25,6 +25,7 @@
 
 <!--main-js-->
     @include('admin.partials.main-js')
+    @include('admin.partials.add-img-js')
 <!--//main-js-->
 
 </body>
