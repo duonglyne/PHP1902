@@ -67,17 +67,17 @@ class MenuItemModel extends Model
             }
 
             foreach ($input_categories as $key => $category) {
-                if ($category['parent_id'] == $parent_id) {
-                    $category['level'] = $lvl;
+                if ($category->parent_id == $parent_id) {
+                    $category->level = $lvl;
 
-                    if ($category['type'] == 7) {
-                        $menu_link = $category['link'];
+                    if ($category->type == 7) {
+                        $menu_link = $category->link;
                     } else {
-                        $menu_link = url($category['link']);
+                        $menu_link = url($category->link);
                     }
 
                     if ($lvl == 1) {
-                        $li_class = (isset($category['total']) && ($category['total'] > 0)) ? 'dropdown ' : '';
+                        $li_class = (isset($category->total) && ($category->total > 0)) ? 'dropdown ' : '';
                         $html .= '<li class="'.$li_class.'"><a href="'.$menu_link.'" class="hyper" target="_blank"><span>';
                     } elseif ($lvl == 2) {
                         $html .= '<li><a href="'.$menu_link.'" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>';
@@ -85,13 +85,13 @@ class MenuItemModel extends Model
 
                     }
                     if ($lvl == 1 || $lvl == 2) {
-                        $html .= $category['name'];
+                        $html .= $category->name;
                     }
                     unset($input_categories[$key]);
 
-                    $new_parent_id = $category['id'];
+                    $new_parent_id = $category->id;
 
-                    if ($lvl == 1 && (isset($category['total']) && ($category['total'] > 0))) {
+                    if ($lvl == 1 && (isset($category->total) && ($category->total > 0))) {
                         $html .= '<b class="caret"></b>';
                     }
 

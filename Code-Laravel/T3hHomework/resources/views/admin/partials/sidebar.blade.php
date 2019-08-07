@@ -109,7 +109,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/newletters') }}"><i class="fa fa-angle-right"></i> Newletters</a></li>
+                            <li><a href="{{ url('/admin/newsletters') }}"><i class="fa fa-angle-right"></i> Newletters</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

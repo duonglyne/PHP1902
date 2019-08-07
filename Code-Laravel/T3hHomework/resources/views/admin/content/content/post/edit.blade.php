@@ -48,9 +48,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="imageinput" class="col-sm-2 control-label">Image</label>
+                        <label for="focusedinput" class="col-sm-2 control-label">Images</label>
                         <div class="col-sm-8">
-                            <input type="file" name="images" class="" id="imageinput" >
+                        <span class="input-group-btn">
+                         <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                       </span>
+                            <input id="thumbnail1" type="text" name="images" value="{{ $post->images }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                            <img id="holder1" src="{{ asset($post->images) }}" style="margin-top:15px;max-height:100px;">
                         </div>
                     </div>
                     <div class="form-group">

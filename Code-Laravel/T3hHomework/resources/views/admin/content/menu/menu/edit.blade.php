@@ -25,15 +25,9 @@
                 <form name="category" action="{{url('admin/menu/'.$menu->id.'/update')}}" method="post" class="form-horizontal">
                     @csrf
                     <div class="form-group">
-                        <label for="focusedinput" class="col-sm-2 control-label">Tên danh mục</label>
+                        <label for="focusedinput" class="col-sm-2 control-label">Tên</label>
                         <div class="col-sm-8">
                             <input type="text" name="name" value="{{$menu->name}}" class="form-control1" id="focusedinput" placeholder="Tên danh mục">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="fileinput" class="col-sm-2 control-label">Slug</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="slug" value="{{$menu->slug}}" class="form-control1" id="fileinput" placeholder="slug">
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,10 +40,6 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
-                        <div class="col-sm-8"><textarea name="desc"  id="txtarea1" cols="50" rows="4" class="mytinymce form-control1">{{$menu->desc}}</textarea></div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary ">Submit</button>

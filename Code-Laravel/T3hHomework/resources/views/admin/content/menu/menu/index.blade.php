@@ -16,9 +16,7 @@
                 <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Tên thẻ</th>
-                    <th>Slug</th>
-                    <th>Mô tả</th>
+                    <th>Tên</th>
                     <th>Vị trí</th>
                     <th>Actions</th>
                 </tr>
@@ -29,8 +27,6 @@
                     <tr>
                         <th scope="row">{{$menu->id}}</th>
                         <td>{{$menu->name}}</td>
-                        <td>{{$menu->slug}}</td>
-                        <td>{{$menu->desc}}</td>
                         <td>{{$locations[$menu->location]}}</td>
                         <td><a class="btn btn-warning" href="{{url('/admin/menu/'.$menu->id.'/edit')}}">Sửa</a>
                             <a class="btn btn-danger" href="{{url('/admin/menu/'.$menu->id.'/delete')}}">Xóa</a>

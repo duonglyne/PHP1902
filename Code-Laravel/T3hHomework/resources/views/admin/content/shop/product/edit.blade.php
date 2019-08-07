@@ -2,11 +2,11 @@
 @extends('admin.layouts.glance')
 
 @section('title')
-    Quản trị danh mục sản phẩm
+    Quản trị sản phẩm
 @endsection
 
 @section('content')
-    <h3>Sửa danh mục sản phẩm {{$product->id.' : '.$product->name}}</h3>
+    <h3>Sửa sản phẩm {{$product->id.' : '.$product->name}}</h3>
     <div class="" style="margin: 20px 0">
         <a href="{{route('product-index')}}" class="btn btn-success">Quản lý sản phẩm</a>
     </div>
@@ -25,7 +25,7 @@
                 <form name="category" action="{{url('admin/shop/product/'.$product->id.'/update')}}" method="post" class="form-horizontal">
                     @csrf
                     <div class="form-group">
-                        <label for="focusedinput" class="col-sm-2 control-label">Tên danh mục</label>
+                        <label for="focusedinput" class="col-sm-2 control-label">Tên sản phẩm</label>
                         <div class="col-sm-8">
                             <input type="text" name="name" value="{{$product->name}}" class="form-control1" id="focusedinput" placeholder="Tên danh mục">
                         </div>
@@ -70,8 +70,6 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     <div class="form-group">
                         <label for="focusedinput" class="col-sm-2 control-label">Thêm ảnh</label>
                         <div class="col-sm-8">
@@ -80,30 +78,62 @@
                             </a></div>
                     </div>
                     <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Homepage</label>
+                        <div class="col-sm-8">
+                            <select name="homepage">
+                                <option value="0" <?php echo ($product->homepage == 0) ? 'selected' : '' ?>>Không</option>
+                                <option value="1" <?php echo ($product->homepage == 1) ? 'selected' : '' ?>>Có</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
-                        <div class="col-sm-8"><textarea name="intro"  id="txtarea1" cols="50" rows="4" class="form-control1">{{$product->intro}}</textarea></div>
+                        <div class="col-sm-8"><textarea name="intro"  id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{$product->intro}}</textarea></div>
                     </div>
                     <div class="form-group">
                         <label for="txtarea2" class="col-sm-2 control-label">Mô tả</label>
-                        <div class="col-sm-8"><textarea name="desc" id="txtarea2" cols="50" rows="4" class="form-control1">{{$product->desc}}</textarea></div>
+                        <div class="col-sm-8"><textarea name="desc" id="txtarea2" cols="50" rows="4" class="form-control1 mytinymce">{{$product->desc}}</textarea></div>
                     </div>
                     <div class="form-group">
-                        <label for="priceCoreinput" class="col-sm-2 control-label">Giá gốc</label>
+                        <label for="priceCoreinput" class="col-sm-2 control-label">Giá niêm yết</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{$product->priceCore}}" name="priceCore" class="" id="priceCoreinput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="priceSaleinput" class="col-sm-2 control-label">Giá sale</label>
+                        <label for="priceSaleinput" class="col-sm-2 control-label">Giá bán</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{$product->priceSale}}" name="priceSale" class="" id="priceSaleinput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="stockinput" class="col-sm-2 control-label">Hàng tồn</label>
+                        <label for="stockinput" class="col-sm-2 control-label">Tồn kho</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{$product->stock}}" name="stock" class="" id="stockinput" >
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Thông tin vận chuyển</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="ship_info" value="{{ $product->ship_info }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Thông tin bổ sung</label>
+                        <div class="col-sm-8">
+                            <textarea name="additional_information" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $product->additional_information }}</textarea></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Đánh giá</label>
+                        <div class="col-sm-8">
+                            <textarea name="review" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $product->review }}</textarea></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Trợ giúp</label>
+                        <div class="col-sm-8">
+                            <textarea name="help" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $product->help }}</textarea></div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary ">Submit</button>

@@ -30,12 +30,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="sluginput" class="col-sm-2 control-label">Slug</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="slug" value="{{old('slug')}}" class="form-control1" id="sluginput" >
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="menuinput" class="col-sm-2 control-label">Vị trí</label>
                         <div class="col-sm-8">
                             <select name="location" id="menuinput">
@@ -45,10 +39,6 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
-                        <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="mytinymce form-control1">{{old('desc')}}</textarea></div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary ">Submit</button>

@@ -32,12 +32,12 @@
                     </div>
                 </div>
 
-{{--                <div class="form-group">--}}
-{{--                    <label for="focusedinput" class="col-sm-2 control-label">Sắp xếp</label>--}}
-{{--                    <div class="col-sm-8">--}}
-{{--                        <input type="text" name="sort" class="form-control1" id="focusedinput" value="{{ $menu->sort }}" placeholder="Nhập thứ tự sắp xếp">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Sắp xếp</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="sort" class="form-control1" id="" value="{{ $menu->sort }}" placeholder="Nhập thứ tự sắp xếp">
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Slug</label>

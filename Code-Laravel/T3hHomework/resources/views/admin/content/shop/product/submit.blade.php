@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h3>Thêm mới danh mục sản phẩm</h3>
+    <h3>Thêm mới sản phẩm</h3>
     <div class="" style="margin: 20px 0">
         <a href="{{url('admin/shop/product')}}" class="btn btn-success">Quản lý sản phẩm</a>
     </div>
@@ -70,6 +70,12 @@
                             </a></div>
                     </div>
                     <div class="form-group">
+                        <label for="shipinput" class="col-sm-2 control-label">Thông tin vận chuyển</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="ship_info" value="{{ old('ship_info') }}" class="form-control1" id="shipinput" placeholder="Default Input">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
                         <div class="col-sm-8"><textarea name="intro" id="txtarea1" cols="50" rows="4" class="mytinymce form-control1">{{old('intro')}}</textarea></div>
                     </div>
@@ -78,22 +84,39 @@
                         <div class="col-sm-8"><textarea name="desc" id="txtarea2" cols="50" rows="4" class="mytinymce form-control1">{{old('desc')}}</textarea></div>
                     </div>
                     <div class="form-group">
-                        <label for="priceCoreinput" class="col-sm-2 control-label">Giá gốc</label>
+                        <label for="priceCoreinput" class="col-sm-2 control-label">Giá niêm yết</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{old('priceCore')}}" name="priceCore" class="" id="priceCoreinput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="priceSaleinput" class="col-sm-2 control-label">Giá sale</label>
+                        <label for="priceSaleinput" class="col-sm-2 control-label">Giá bán</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{old('priceSale')}}" name="priceSale" class="" id="priceSaleinput" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="stockinput" class="col-sm-2 control-label">Hàng tồn</label>
+                        <label for="stockinput" class="col-sm-2 control-label">Tồn kho</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control1" value="{{old('stock')}}" name="stock" class="" id="stockinput" >
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Thông tin bổ sung</label>
+                        <div class="col-sm-8">
+                            <textarea name="additional_information" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('additional_information') }}</textarea></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Đánh giá</label>
+                        <div class="col-sm-8">
+                            <textarea name="review" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('review') }}</textarea></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtarea1" class="col-sm-2 control-label">Trợ giúp</label>
+                        <div class="col-sm-8">
+                            <textarea name="help" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('help') }}</textarea></div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary ">Submit</button>

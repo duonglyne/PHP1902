@@ -15,12 +15,10 @@
          <table class="table table-bordered">
              <thead>
                 <tr>
-                    <th>STT</th>
-                    <th>Tên danh mục</th>
+                    <th>#</th>
+                    <th>Tên</th>
                     <th>Slug</th>
-                    <th>Ảnh</th>
-                    <th>Mô tả ngắn</th>
-                    <th>Mô tả</th>
+                    <th>Images</th>
                     <th>Actions</th>
                 </tr>
              </thead>
@@ -31,9 +29,7 @@
                     <th scope="row">{{$cat->id}}</th>
                     <td>{{$cat->name}}</td>
                     <td>{{$cat->slug}}</td>
-                    <td><img src="{{$cat->images}}" alt=""></td>
-                    <td>{{$cat->intro}}</td>
-                    <td>{{$cat->desc}}</td>
+                    <td><img src="{{ asset($cat->images) }}" style="margin-top:15px;max-height:100px;"></td>
                     <td><a class="btn btn-warning" href="{{url('/admin/shop/category/'.$cat->id.'/edit')}}">Sửa</a>
                         <a class="btn btn-danger" href="{{url('/admin/shop/category/'.$cat->id.'/delete')}}">Xóa</a>
                     </td>

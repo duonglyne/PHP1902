@@ -145,7 +145,7 @@ class MenuItemController extends Controller
         $params_json = json_encode($params);
 
         $item->name = $input['name'];
-//        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
+        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
         $item->type = isset($input['type']) ? $input['type'] : 0;
 
         switch ($item->type) {
@@ -185,38 +185,38 @@ class MenuItemController extends Controller
 
         $item->save();
 
-//        if ($change_parent == true) {
-//
-//            if ($old_parent_id > 0) {
-//                /**
-//                 * trước khi save
-//                 * Đếm tổng số menu_item có cha là $item->parent_id
-//                 */
-//                $total_old = DB::table('menu_items')->where('parent_id', $old_parent_id)->count();
-//
-//                /**
-//                 * Cập nhật tổng số bản ghi con cho menu item cha
-//                 */
-//                $old_parent = MenuItemModel::find($old_parent_id);
-//                $old_parent->total = (int) $total_old;
-//                $old_parent->save();
-//            }
-//
-//        }
+        if ($change_parent == true) {
 
-//        if ($item->parent_id > 0) {
-//            /**
-//             * Đếm tổng số menu_item có cha là $item->parent_id
-//             */
-//            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
-//
-//            /**
-//             * Cập nhật tổng số bản ghi con cho menu item cha
-//             */
-//            $parent = MenuItemModel::find($item->parent_id);
-//            $parent->total = (int) $total;
-//            $parent->save();
-//        }
+            if ($old_parent_id > 0) {
+                /**
+                 * trước khi save
+                 * Đếm tổng số menu_item có cha là $item->parent_id
+                 */
+                $total_old = DB::table('menu_items')->where('parent_id', $old_parent_id)->count();
+
+                /**
+                 * Cập nhật tổng số bản ghi con cho menu item cha
+                 */
+                $old_parent = MenuItemModel::find($old_parent_id);
+                $old_parent->total = (int) $total_old;
+                $old_parent->save();
+            }
+
+        }
+
+        if ($item->parent_id > 0) {
+            /**
+             * Đếm tổng số menu_item có cha là $item->parent_id
+             */
+            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
+
+            /**
+             * Cập nhật tổng số bản ghi con cho menu item cha
+             */
+            $parent = MenuItemModel::find($item->parent_id);
+            $parent->total = (int) $total;
+            $parent->save();
+        }
 
 
         return redirect('/admin/menu-item');
@@ -247,7 +247,7 @@ class MenuItemController extends Controller
 
 
         $item->name = $input['name'];
-//        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
+        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
         $item->type = isset($input['type']) ? $input['type'] : 0;
 
         $final_link = '';
@@ -307,19 +307,19 @@ class MenuItemController extends Controller
 
 
 
-//        if ($item->parent_id > 0) {
-//            /**
-//             * Đếm tổng số menu_item có cha là $item->parent_id
-//             */
-//            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
-//
-//            /**
-//             * Cập nhật tổng số bản ghi con cho menu item cha
-//             */
-//            $parent = MenuItemModel::find($item->parent_id);
-//            $parent->total = (int) $total;
-//            $parent->save();
-//        }
+        if ($item->parent_id > 0) {
+            /**
+             * Đếm tổng số menu_item có cha là $item->parent_id
+             */
+            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
+
+            /**
+             * Cập nhật tổng số bản ghi con cho menu item cha
+             */
+            $parent = MenuItemModel::find($item->parent_id);
+            $parent->total = (int) $total;
+            $parent->save();
+        }
 
 
         return redirect('/admin/menu-item/');

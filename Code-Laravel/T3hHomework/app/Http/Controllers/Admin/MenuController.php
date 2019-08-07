@@ -91,15 +91,13 @@ class MenuController extends Controller
         // kiểm tra dữ liệu nhập vào
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required',
-            'desc' => 'required',
             'location' => 'required',
         ]);
 
         // gán giá trị mới
         $item->name = $input['name'];
-        $item->slug = $input['slug'];
-        $item->desc = $input['desc'];
+        $item->slug = "";
+        $item->desc = "";
         $item->location = $input['location'];
 
         $item->save();
@@ -115,15 +113,13 @@ class MenuController extends Controller
         // kiểm tra dữ liệu nhập vào
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required',
-            'desc' => 'required',
             'location' => 'required',
         ]);
 
         // gán giá trị mới
         $item->name = $input['name'];
-        $item->slug = $input['slug'];
-        $item->desc = $input['desc'];
+        $item->slug = "";
+        $item->desc = "";
         $item->location = $input['location'];
 
 

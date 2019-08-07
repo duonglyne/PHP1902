@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Model\Admin\ConfigModell;
 use App\Model\Admin\MenuItemModel;
 use App\Model\Admin\MenuModel;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +31,37 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
+        $items = ConfigModell::all();
+
+        $config = array();
+        $config[] = 'web_name';
+        $config[] = 'header_logo';
+        $config[] = 'footer_logo';
+        $config[] = 'intro';
+        $config[] = 'desc';
+
+        $default = array();
+
+        /**
+         * Tạo mặc định cho mảng config
+         */
+        foreach ($config as $item_config) {
+
+            if (!isset($default[$item_config])) {
+                $default[$item_config] = '';
+            }
+        }
+
+        /**
+         * Lấy từ CSDL ra đè lại mảng $default
+         */
+        foreach ($items as $item) {
+
+            $key = $item->name;
+            $default[$key] = $item->value;
+        }
+
+        $global_settings = $default;
         /**
          * share data to all view
          * shara menu and menuitem to all view
@@ -41,6 +73,7 @@ class AppServiceProvider extends ServiceProvider
         $menus_items_footer2 = MenuItemModel::getMenuItemByFooter2();
         $menus_items_footer3 = MenuItemModel::getMenuItemByFooter3();
 
+        View::share('fe_global_settings', $global_settings);
         //View::share('fe_total_qtt_cart', $total_qtt_cart);
         View::share('fe_menus_items_header', $menus_items_header);
         View::share('fe_menus_items_header_html', $menus_items_header_html);

@@ -11,10 +11,48 @@
 |
 */
 
-Route::get('/', function () {
-//    return view('frontend.shop.category.index');
-    return view('frontend.homepages.index');
-});
+
+/**
+ * Route for user... front end
+ */
+
+//Homepage
+Route::get('/', 'Frontend\HomePageController@index');
+Route::get('/search', 'Frontend\SearchController@index');
+Route::post('/newsletter', 'Frontend\NewsletterController@store');
+Route::get('/newsletter', 'Frontend\NewsletterController@index');
+
+
+//Shop category
+Route::get('shop/category/{id}', 'Frontend\ShopCategoryController@detail');
+
+// Shop product
+Route::get('shop/product/{id}', 'Frontend\ShopProductController@detail');
+
+// content page
+Route::get('content/page/{id}', 'Frontend\ContentPageController@detail');
+
+// content post
+Route::get('content/post/{id}', 'Frontend\ContentPostController@detail');
+
+// content category
+Route::get('content/category/{id}', 'Frontend\ContentCategoryController@detail');
+
+// content tag
+Route::get('content/tag/{id}', 'Frontend\ContentTagController@index');
+
+//cart
+Route::get('shop/cart', 'Frontend\ShopCarrtController@index');
+Route::post('shop/cart/add', 'Frontend\ShopCarrtController@add');
+Route::post('shop/cart/update', 'Frontend\ShopCarrtController@update');
+Route::post('shop/cart/remove', 'Frontend\ShopCarrtController@remove');
+Route::post('shop/cart/clear', 'Frontend\ShopCarrtController@clear');
+
+//payment
+Route::get('shop/payment', 'Frontend\ShopPaymentController@index');
+Route::post('shop/payment', 'Frontend\ShopPaymentController@order');
+Route::get('shop/payment/after', 'Frontend\ShopPaymentController@afterOrder');
+ 
 
 Auth::routes();
 
@@ -111,9 +149,16 @@ Route::prefix('admin')->group(function (){
      * shop/oder
      */
 
-    Route::get('shop/oder', function(){
-        return view('admin.content.shop.oder.index');
-    });
+
+
+    Route::get('shop/oder', 'Admin\ShopOderController@index')->name('oder-index');
+    Route::get('shop/oder/create', 'Admin\ShopOderController@create')->name('add-oder');
+    Route::get('shop/oder/{id}/edit', 'Admin\ShopOderController@edit')->name('edit-oder');
+    Route::get('shop/oder/{id}/delete', 'Admin\ShopOderController@delete')->name('delete-oder');
+
+    Route::post('shop/oder', 'Admin\ShopOderController@store')->name('add-oder-post');
+    Route::post('shop/oder/{id}/update', 'Admin\ShopOderController@update')->name('update-oder-post');
+    Route::post('shop/oder/{id}/destroy', 'Admin\ShopOderController@destroy')->name('destroy-oder-post');
 
     /**
      * Route quản lý brands
@@ -279,9 +324,15 @@ Route::prefix('admin')->group(function (){
 
 
     // route for banners
-    Route::get('banners', function(){
-        return view('admin.content.banner.index');
-    });
+
+    Route::get('banners', 'Admin\BannerController@index')->name('banners-index');
+    Route::get('banners/create', 'Admin\BannerController@create')->name('add-banners');
+    Route::get('banners/{id}/edit', 'Admin\BannerController@edit')->name('edit-banners');
+    Route::get('banners/{id}/delete', 'Admin\BannerController@delete')->name('delete-banners');
+
+    Route::post('banners', 'Admin\BannerController@store')->name('add-banners-post');
+    Route::post('banners/{id}/update', 'Admin\BannerController@update')->name('update-banners-post');
+    Route::post('banners/{id}/destroy', 'Admin\BannerController@destroy')->name('delete-banners-post');
 
     //route for contact
     Route::get('contacts', function(){
@@ -289,19 +340,22 @@ Route::prefix('admin')->group(function (){
     });
 
     // route for global setting
-    Route::get('config', function(){
-        return view('admin.content.global-setting.index');
-    });
+    Route::get('config', 'Admin\ConfigController@index');
+    Route::post('config', 'Admin\ConfigController@store');
 
     // route for media
-    Route::get('media', function(){
-        return view('admin.content.media.index');
-    });
+    Route::get('media', 'Admin\MediaController@index');
 
     // route for newletters
-    Route::get('newletters', function(){
-        return view('admin.content.newletter.index');
-    });
+
+    Route::get('newsletters', 'Admin\NewsletterController@index')->name('newsletters-index');
+    Route::get('newsletters/create', 'Admin\NewsletterController@create')->name('add-newsletters');
+    Route::get('newsletters/{id}/edit', 'Admin\NewsletterController@edit')->name('edit-newsletters');
+    Route::get('newsletters/{id}/delete', 'Admin\NewsletterController@delete')->name('delete-newsletters');
+
+    Route::post('newsletters', 'Admin\NewsletterController@store')->name('add-newsletters-post');
+    Route::post('newsletters/{id}/update', 'Admin\NewsletterController@update')->name('update-newsletters-post');
+    Route::post('newsletters/{id}/destroy', 'Admin\NewsletterController@destroy')->name('delete-newsletters-post');
 
     //route for email
     Route::get('email/inbox', function(){

@@ -25,9 +25,9 @@
             <form name="page" action="{{ route('add-menu-item-post') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Tên</label>
+                    <label for="" class="col-sm-2 control-label">Tên</label>
                     <div class="col-sm-8">
-                        <input type="text" name="name" value="{{ old('name') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <input type="text" name="name" value="{{ old('name') }}" class="form-control1" id="" placeholder="Default Input">
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
 {{--                </div>--}}
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Kiểu menu item</label>
+                    <label for="" class="col-sm-2 control-label">Kiểu menu item</label>
                     <div class="col-sm-8">
                         <select id="menu-type" name="type">
                             @foreach($types as $type_id => $type)
@@ -50,7 +50,7 @@
                 </div>
 
                 <div id="type-1" class="form-group menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Shop category</label>
+                    <label for="" class="col-sm-2 control-label">Shop category</label>
                     <div class="col-sm-8">
                         <select name="params_1">
                             @foreach($shop_categories as $shop_category)
@@ -61,7 +61,7 @@
                 </div>
 
                 <div id="type-2" class="form-group  menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Shop product</label>
+                    <label for="" class="col-sm-2 control-label">Shop product</label>
                     <div class="col-sm-8">
                         <select name="params_2">
                             @foreach($shop_products as $shop_product)
@@ -72,7 +72,7 @@
                 </div>
 
                 <div id="type-3" class="form-group  menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Content category</label>
+                    <label for="" class="col-sm-2 control-label">Content category</label>
                     <div class="col-sm-8">
                         <select name="params_3">
                             @foreach($content_categories as $content_category)
@@ -83,7 +83,7 @@
                 </div>
 
                 <div id="type-4" class="form-group  menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Content post</label>
+                    <label for="" class="col-sm-2 control-label">Content post</label>
                     <div class="col-sm-8">
                         <select name="params_4">
                             @foreach($content_posts as $content_post)
@@ -94,7 +94,7 @@
                 </div>
 
                 <div id="type-5" class="form-group menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Content page</label>
+                    <label for="" class="col-sm-2 control-label">Content page</label>
                     <div class="col-sm-8">
                         <select name="params_5">
                             @foreach($content_pages as $content_page)
@@ -105,7 +105,7 @@
                 </div>
 
                 <div id="type-6" class="form-group menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Content tag</label>
+                    <label for="" class="col-sm-2 control-label">Content tag</label>
                     <div class="col-sm-8">
                         <select name="params_6">
                             @foreach($content_tags as $content_tag)
@@ -116,28 +116,34 @@
                 </div>
 
                 <div id="type-7" class="form-group menu-type">
-                    <label for="focusedinput" class="col-sm-2 control-label">Custom link</label>
+                    <label for="" class="col-sm-2 control-label">Custom link</label>
                     <div class="col-sm-8">
                         <input name="params_7" value="" class="form-control1" id="focusedinput" placeholder="EX: www.google.com">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Final Link</label>
+                    <label for="flinkinput" class="col-sm-2 control-label">Final Link</label>
                     <div class="col-sm-8">
-                        <input type="text" name="link" readonly value="{{ old('link') }}" class="form-control1" id="focusedinput" placeholder="Auto fill link">
+                        <input type="text" name="link" readonly value="{{ old('link') }}" class="form-control1" id="flinkinput" placeholder="Auto fill link">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sortinput" class="col-sm-2 control-label">Sort</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="sort"  value="{{ old('sort') }}" class="form-control1" id="sortinput" placeholder="Thứ tự sắp xếp">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Icon</label>
+                    <label for="iconinput" class="col-sm-2 control-label">Icon</label>
                     <div class="col-sm-8">
-                        <input type="text" name="icon" value="{{ old('icon') }}" class="form-control1" id="focusedinput" placeholder="EX: fa fa-shop">
+                        <input type="text" name="icon" value="{{ old('icon') }}" class="form-control1" id="iconinput" placeholder="EX: fa fa-shop">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Cha</label>
+                    <label for="" class="col-sm-2 control-label">Cha</label>
                     <div class="col-sm-8">
                         <select name="parent_id">
                             <option value="0">Mặc định</option>
